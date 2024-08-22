@@ -1,0 +1,17 @@
+export { default as aboutUs } from "./about-us.png";
+export { default as arrowRight } from "./arrow-right.svg";
+export { default as ball } from "./ball.svg";
+export { default as calendar } from "./calendar.svg";
+export { default as clock } from "./clock.svg";
+export { default as cloudDownload } from "./cloud-download.svg";
+export { default as hero } from "./hero-image.png";
+export { default as logo } from "./logo.svg";
+export { default as message } from "./message.svg";
+export { default as presidentialNomination } from "./presidential_nomination.jpg";
+export { default as topStory } from "./fkf-electoral-board-chairperson.jpg";
+export { default as patrick } from "./patrick.png";
+
+export { default as judge } from "./judge.png";
+export { default as electoralCompliance } from "./electoral-compliance.png";
+export { default as overseeElection } from "./oversee-election.png";
+export { default as verifyCandidate } from "./verify-candidate.png";
