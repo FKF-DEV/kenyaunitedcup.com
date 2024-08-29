@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { topStory } from "../assets";
 import Header from "./Header";
 
-const HeroCard = () => {
+const HeroCard = ({ article }) => {
   return (
     <div className="border bg-white p-1.5 w-[1280px] rounded-3xl md:rounded-[40px]">
       <div className="flex items-center flex-col md:flex-row gap-6 md:gap-12 rounded-2xl md:rounded-[32px] md:h-[584px] overflow-hidden bg-gray-100">
         <div className="w-full md:w-1/2 h-1/2 md:h-full">
           <img
-            src={topStory}
-            alt="top-story"
+            src={article.image}
+            alt={article.title}
             className="size-full object-cover"
           />
         </div>
@@ -18,21 +18,16 @@ const HeroCard = () => {
           <Header title="Breaking News" color="primary" />
 
           <h3 className="text-2xl md:text-4xl font-semibold text-center md:text-left text-transparent bg-gradient-to-b from-[#004324] to-[#116937] bg-clip-text">
-            FKF Electoral Board
+            {article.title}
           </h3>
 
           <p className="mt-4 text-sm font-normal text-center md:text-left">
-            The FKF Electoral Board was constituted by the FKF National
-            Executive Committee, as provided for in Article 39 Clause 1p of the
-            FKF Constitution. It will be in place for four years effective
-            January 28, 2020, following its ratification and adoption at the
-            January 2020 Special General Meeting. The Board will oversee
-            National and County Elections, and may appoint an individual or
-            institution to oversee sub-county elections.
+            {article.description}
           </p>
 
           <Link
-            to={"/"}
+            to={`/news/${article.title_slug}`}
+            // to={"/"}
             className="flex items-center gap-2 transition-all duration-300 ease-in hover:gap-2.5 hover:ring ring-[#0F6B38] px-3 py-2 rounded-full"
           >
             <span className="font-sm font-semibold text-[#0F6B38]">
