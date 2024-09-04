@@ -45,7 +45,7 @@ function Hero() {
               key={i}
               className={`block h-1.5 rounded-full transition-all duration-300 ${
                 activeIndex === i
-                  ? "w-8 bg-gradient-to-r from-red-500 to-green-500"
+                  ? "w-8 bg-gradient-to-r from-red-700 to-green-700"
                   : "w-4 bg-gray-300"
               }`}
               onClick={() => setActiveIndex(i)}

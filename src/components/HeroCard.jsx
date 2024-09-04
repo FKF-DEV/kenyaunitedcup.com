@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { topStory } from "../assets";
 import Header from "./Header";
 
 const HeroCard = ({ article }) => {
@@ -21,13 +20,12 @@ const HeroCard = ({ article }) => {
             {article.title}
           </h3>
 
-          <p className="mt-4 text-sm font-normal text-center md:text-left">
+          <p className="mt-4 text-sm font-normal text-center md:text-left line-clamp-4">
             {article.description}
           </p>
 
           <Link
             to={`/news/${article.title_slug}`}
-            // to={"/"}
             className="flex items-center gap-2 transition-all duration-300 ease-in hover:gap-2.5 hover:ring ring-[#0F6B38] px-3 py-2 rounded-full"
           >
             <span className="font-sm font-semibold text-[#0F6B38]">
