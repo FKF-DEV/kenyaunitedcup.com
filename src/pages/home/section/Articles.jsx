@@ -1,32 +1,34 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
-import { calendar, clock, topStory } from "../../../assets";
+import { calendar, clock } from "../../../assets";
 import { Header } from "../../../components";
 
-// Static data
-const articles = [
-  {
-    id: 1,
-    image: topStory,
-    title:
-      "FKF Electoral Board publishes final results from national elections",
-    description:
-      "Football Kenya Federation’s Electoral Board has published the final results from the national elections held on October 17, 2020.",
-    time: "12:20 PM",
-    date: "Sep 1, 2023",
-  },
-  {
-    id: 2,
-    image: topStory,
-    title: "New regulations introduced in Kenyan football",
-    description:
-      "The Kenyan football federation has announced new regulations that will impact upcoming matches and player transfers.",
-    time: "10:15 AM",
-    date: "Sep 5, 2023",
-  },
-  // Add more articles if needed
-];
-
 function Articles() {
+  const [articles, setArticles] = useState([]);
+  const BASE_URL = import.meta.env.VITE_API_URL;
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/api/news/`);
+        const firstTwoArticles = response.data.results
+          .slice(0, 2)
+          .map((article) => ({
+            ...article,
+            image: article.image.startsWith("http")
+              ? article.image
+              : `${BASE_URL}${article.image}`,
+          }));
+        setArticles(firstTwoArticles);
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+      }
+    };
+
+    fetchArticles();
+  }, [BASE_URL]);
+
   return (
     <div className="px-4 py-6 flex flex-col items-center gap-10 max-w-[1440px] mx-auto">
       <div className="flex-center flex-col gap-2">
@@ -45,11 +47,11 @@ function Articles() {
         </p>
       </div>
 
-      <div className="flex items-center w-full flex-row overflow-x-scroll gap-4 md:gap-8">
+      <div className="flex items-center w-full flex-row overflow-x-scroll gap-4 p-4 md:gap-8 ">
         {articles.map((article, index) => (
           <div
             key={article.id}
-            className={`relative h-72 md:h-[512px] aspect-video p-8 rounded-2xl md:rounded-3xl flex items-end bg-gradient-to-b from-white via-[#09371D]/50 to-[#116937] ${
+            className={`relative h-72 md:h-[512px] aspect-video p-8 rounded-2xl md:rounded-3xl shadow-lg flex items-end bg-cover bg-center transition-all duration-300 hover:cursor-pointer hover:bg-gradient-to-b hover:from-white hover:via-[#09371D]/50 hover:to-[#116937] ${
               index === 1 ? "w-[34%]" : "w-full"
             }`}
             style={{ backgroundImage: `url(${article.image})` }}
@@ -74,12 +76,23 @@ function Articles() {
               <div className="flex items-center gap-4 md:gap-8 mt-2 md:mt-0">
                 <div className="flex items-center gap-1.5">
                   <img src={clock} alt="clock" className="size-5" />
-                  <span className="text-base">{article.time}</span>
+                  <span className="text-base">
+                    {new Date(article.created_at).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </span>
                 </div>
 
                 <div className="flex items-center gap-1.5">
                   <img src={calendar} alt="calendar" className="size-5" />
-                  <span className="text-base">{article.date}</span>
+                  <span className="text-base">
+                    {new Date(article.created_at).toLocaleDateString([], {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </span>
                 </div>
               </div>
             </div>
