@@ -49,8 +49,10 @@ function Articles() {
 
       <div className="flex items-center w-full flex-row overflow-x-scroll gap-4 p-4 md:gap-8">
         {articles.map((article, index) => (
-          <div
+          <Link
+            to={`/news/${article.title_slug}`}
             key={article.id}
+            onClick={() => window.scrollTo(0, 0)}
             className={`relative h-72 md:h-[512px] aspect-video p-8 rounded-2xl md:rounded-3xl shadow-lg flex items-end bg-cover bg-center transition-all duration-300 hover:cursor-pointer ${
               index === 1 ? "w-[34%]" : "w-full"
             }`}
@@ -94,7 +96,7 @@ function Articles() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

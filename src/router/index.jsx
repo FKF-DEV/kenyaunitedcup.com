@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { About, ContactUs, Events, Home, Layout } from "../pages";
+import { About, ContactUs, Events, Home, Layout, ArticlePage } from "../pages";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/contact-us",
         element: <ContactUs />,
+      },
+      {
+        path: "/news/:title_slug",
+        element: <ArticlePage />,
       },
     ],
   },
