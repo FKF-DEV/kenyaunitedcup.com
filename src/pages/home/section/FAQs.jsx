@@ -31,8 +31,8 @@ function FAQs() {
         </p>
 
         <Link
-          to="/"
-          className="px-6 py-3 border border-gray-300 bg-gray-100 rounded-full"
+          to="/contact-us"
+          className="px-6 py-3 border border-gray-50 bg-gradient-to-r from-gray-300 to-gray-100 rounded-full transition-all duration-300 ease-in hover:gap-2.5 hover:ring ring-[#0F6B38]"
         >
           <span className="text-transparent bg-gradient-to-b from-[#004324] via-[#116937] to-[#2AA74B] bg-clip-text text-base font-semibold">
             Contact Us

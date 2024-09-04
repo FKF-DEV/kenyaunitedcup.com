@@ -1,4 +1,4 @@
-import {AddOutlined, RemoveOutlined} from '@mui/icons-material';
+import { AddOutlined, RemoveOutlined } from "@mui/icons-material";
 
 // eslint-disable-next-line no-unused-vars
 // import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
@@ -8,27 +8,34 @@ import { useState } from "react";
 const questions = [
   {
     id: 1,
-    question: "What is FKF Electoral Board?",
+    question: "Who can participate in FKF elections?",
     answer:
-      "A board that oversees National and County FKF Elections, and may appoint an individual or institution to oversee sub-county elections.",
+      "Elections are open to candidates for positions at the National, County, and Sub-County levels, provided they meet the eligibility criteria.",
   },
   {
     id: 2,
-    question: "What is FKF Electoral Board?",
+    question:
+      "What are the eligibility requirements for the FKF President and Deputy President?",
     answer:
-      "A board that oversees National and County FKF Elections, and may appoint an individual or institution to oversee sub-county elections.",
+      "Candidates must be Kenyan  citizens, have been active in  football for three of the last  four years, and meet other  criteria like having a clean  criminal record and clearance  from various authorities.",
   },
   {
     id: 3,
-    question: "What is FKF Electoral Board?",
+    question: "What documents are required to submit a candidature?",
     answer:
-      "A board that oversees National and County FKF Elections, and may appoint an individual or institution to oversee sub-county elections.",
+      "Candidates must submit a valid  Kenyan ID or passport, a  certificate of good conduct,  and other clearances such as  from the Credit Reference  Bureau and the Kenya Revenue  Authority.",
   },
   {
     id: 4,
-    question: "What is FKF Electoral Board?",
+    question: "How is voting conducted in FKF elections?",
     answer:
-      "A board that oversees National and County FKF Elections, and may appoint an individual or institution to oversee sub-county elections.",
+      "Voting is conducted by secret ballot, and the results are counted and declared in the presence of all delegates.",
+  },
+  {
+    id: 5,
+    question: "What is the timeline for appealing election results?",
+    answer:
+      "Appeals against election  results must be lodged within  three days of the  announcement.",
   },
 ];
 
@@ -88,4 +95,3 @@ export default function FAQ() {
     </div>
   );
 }
-
