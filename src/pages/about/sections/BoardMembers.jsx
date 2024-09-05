@@ -16,8 +16,8 @@ const BoardMembers = () => {
         </h3>
 
         <p className="mt-4 text-sm font-normal text-center max-w-lg">
-          A bit of information about the members responsible for being the cog
-          in our ever revolving wheels.
+          Our Board is composed of experienced professionals with a deep
+          commitment to the principles of democracy and governance in sports.
         </p>
       </div>
 
