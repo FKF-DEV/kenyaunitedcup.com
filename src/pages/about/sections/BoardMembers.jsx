@@ -21,9 +21,14 @@ const BoardMembers = () => {
         </p>
       </div>
 
-      <div className="flex justify-between w-full gap-8 overflow-scroll px-2">
+      <div className="flex justify-between w-full gap-8 overflow-x-scroll px-2 scrollbar-thin scrollbar-thumb-red-900 scrollbar-track-gray-200">
         {Array.from({ length: 6 }).map((_, i) => (
-          <BoardMember key={i} />
+          <div
+            key={i}
+            className="flex items-center justify-center w-full h-full"
+          >
+            <BoardMember />
+          </div>
         ))}
       </div>
     </section>
@@ -67,25 +72,6 @@ const BoardMember = () => {
 
             <span className="text-sm md:text-base text-[#475467]">
               Secretary
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M3 4.86432C3 4.38107 3.39175 3.98932 3.875 3.98932H5.75876C6.1865 3.98932 6.55154 4.29856 6.62186 4.72047L7.26876 8.60186C7.33191 8.98076 7.14055 9.35654 6.79697 9.52833L5.44235 10.2056C6.41911 12.6328 8.35647 14.5702 10.7837 15.547L11.461 14.1923C11.6328 13.8488 12.0086 13.6574 12.3875 13.7206L16.2688 14.3675C16.6908 14.4378 17 14.8028 17 15.2306V17.1143C17 17.5976 16.6082 17.9893 16.125 17.9893H14.375C8.09276 17.9893 3 12.8966 3 6.61432V4.86432Z"
-                fill="#475467"
-              />
-            </svg>
-
-            <span className="text-sm md:text-base text-[#475467]">
-              0700000000
             </span>
           </div>
 
