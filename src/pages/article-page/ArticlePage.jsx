@@ -50,7 +50,7 @@ const ArticlePage = () => {
         <img
           src={article.image}
           alt={article.title}
-          className="w-full rounded-2xl md:rounded-[32px] md:h-[631px] object-cover overflow-hidden"
+          className="w-full rounded-2xl md:rounded-[32px] md:h-[631px] object-cover object-right-top overflow-hidden"
         />
       </div>
       <Border />
