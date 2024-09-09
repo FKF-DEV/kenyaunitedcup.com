@@ -70,21 +70,21 @@ const ArticlePage = () => {
           </h3>
           <div className="grid grid-cols-2 gap-4 py-16">
             {relatedArticles.slice(0, 2).map((relatedArticle) => (
-              <Link to={`/news/${relatedArticle.title_slug}`} key={relatedArticle.id} onClick={() => window.scrollTo(0, 0)}>
+              <Link
+                to={`/news/${relatedArticle.title_slug}`}
+                key={relatedArticle.id}
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 <div
-                  className="flex flex-col items-start justify-center gap-2 p-4 hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in"
+                  className="flex flex-col items-start justify-end gap-2 p-4 shadow-inner min-h-[300px] hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in w-full rounded-sm md:rounded-lg md:h-[200px] bg-cover bg-right-top overflow-hidden"
+                  style={{ backgroundImage: `url(${relatedArticle.image}) ` }}
                 >
-                  <img
-                    src={relatedArticle.image}
-                    alt={relatedArticle.title}
-                    className="w-full rounded-sm md:rounded-lg md:h-[200px] object-cover overflow-hidden "
-                  />
-                  <h4 className="text-lg font-semibold self-start">
-                    {relatedArticle.title}
-                  </h4>
-                  <p className="text-sm font-normal line-clamp-2">
-                    {relatedArticle.description}
-                  </p>
+                    <h4 className="text-lg font-semibold self-start text-white">
+                      {relatedArticle.title}
+                    </h4>
+                    <p className="text-sm font-normal line-clamp-2 text-white">
+                      {relatedArticle.description}
+                    </p>
                 </div>
               </Link>
             ))}
