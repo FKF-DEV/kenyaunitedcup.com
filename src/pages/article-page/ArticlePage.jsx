@@ -3,6 +3,10 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Border, Header } from "../../components";
 import { Link } from "react-router-dom";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FiThumbsUp } from "react-icons/fi";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const ArticlePage = () => {
   const { title_slug } = useParams();
@@ -39,7 +43,7 @@ const ArticlePage = () => {
   }, [BASE_URL, title_slug]);
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 flex flex-col items-center justify-center">
       <div className="flex flex-col items-center justify-center px-40 py-10 gap-10">
         <h3 className="text-xl md:text-3xl font-semibold text-transparent bg-gradient-to-b from-[#004324] to-[#116937]/70 bg-clip-text">
           {article.title}
@@ -52,9 +56,30 @@ const ArticlePage = () => {
           alt={article.title}
           className="w-full rounded-2xl md:rounded-[32px] md:h-[631px] object-cover object-right-top overflow-hidden"
         />
+        <div className="flex flex-row items-center w-full justify-between">
+          <div className="flex flex-row items-center gap-2">
+            <p className="text-green-700 text-sm font-semibold">SHARE IT</p>
+            <div className="p-2 rounded-full bg-white">
+              <FaFacebookF />
+            </div>
+            <div className="p-2 rounded-full bg-white">
+              <FaInstagram />
+            </div>
+            <div className="p-2 rounded-full bg-white">
+              <FaXTwitter />
+            </div>
+            <div className="p-2 rounded-full bg-white">
+              <FaLinkedinIn />
+            </div>
+          </div>
+          <div className="flex flex-row items-center gap-2 text-green-700 font-semibold">
+            <FiThumbsUp />
+            <p>{article.likes}</p>
+          </div>
+        </div>
       </div>
       <Border />
-      <div className="flex flex-col items-center justify-center px-40 py-10 gap-10">
+      <div className="flex flex-col items-center justify-center px-40 py-5 gap-10 w-[75%]">
         <p>{article.body}</p>
       </div>
       <Border />
@@ -68,23 +93,33 @@ const ArticlePage = () => {
               These
             </span>
           </h3>
-          <div className="grid grid-cols-2 gap-4 py-16">
-            {relatedArticles.slice(0, 2).map((relatedArticle) => (
-              <Link
-                to={`/news/${relatedArticle.title_slug}`}
-                key={relatedArticle.id}
-                onClick={() => window.scrollTo(0, 0)}
+          <div className="flex flex-row items-center gap-4">
+            <div className="p-2 rounded-md cursor-pointer transition-all ease-in duration-500 bg-gradient-to-r from-red-700/40 to-green-700/40">
+              <MdKeyboardArrowLeft />
+            </div>
+            <div className="grid grid-cols-2 gap-4 py-16">
+              {relatedArticles.slice(0, 2).map((relatedArticle) => (
+                <Link
+                  to={`/news/${relatedArticle.title_slug}`}
+                  key={relatedArticle.id}
+                  onClick={() => window.scrollTo(0, 0)}
                   style={{ backgroundImage: `url(${relatedArticle.image}) ` }}
+                  className="rounded-sm md:rounded-lg bg-cover bg-right-top overflow-hidden hover:scale-105 transition-all duration-300 ease-in"
                 >
+                  <div className="flex flex-col items-start justify-end gap-2 p-4 shadow-inner min-h-[300px] hover:cursor-pointer transition-all duration-300 ease-in hover:bg-gradient-to-b hover:from-white/30 hover:via-[#09371D]/50 hover:to-[#09371D] z-10 w-full  md:h-[200px] bg-cover bg-right-top overflow-hidden">
                     <h4 className="text-lg font-semibold self-start text-white">
                       {relatedArticle.title}
                     </h4>
                     <p className="text-sm font-normal line-clamp-2 text-white">
                       {relatedArticle.description}
                     </p>
-                </div>
-              </Link>
-            ))}
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="p-2 rounded-md cursor-pointer transition-all ease-in duration-500 bg-gradient-to-r from-red-700 to-green-700 text-white">
+              <MdKeyboardArrowRight />
+            </div>
           </div>
         </div>
       </div>
