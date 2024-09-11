@@ -74,9 +74,6 @@ const ArticlePage = () => {
                 to={`/news/${relatedArticle.title_slug}`}
                 key={relatedArticle.id}
                 onClick={() => window.scrollTo(0, 0)}
-              >
-                <div
-                  className="flex flex-col items-start justify-end gap-2 p-4 shadow-inner min-h-[300px] hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in w-full rounded-sm md:rounded-lg md:h-[200px] bg-cover bg-right-top overflow-hidden"
                   style={{ backgroundImage: `url(${relatedArticle.image}) ` }}
                 >
                     <h4 className="text-lg font-semibold self-start text-white">
