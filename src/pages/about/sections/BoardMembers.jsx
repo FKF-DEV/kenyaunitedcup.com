@@ -1,7 +1,57 @@
 import { patrick } from "../../../assets";
 import { Header } from "../../../components";
+import React, { useRef, useState, useEffect } from "react";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const BoardMembers = () => {
+  const scrollRef = useRef(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [maxScrollWidth, setMaxScrollWidth] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollRef.current) {
+        setScrollPosition(scrollRef.current.scrollLeft);
+      }
+    };
+
+    const updateMaxScrollWidth = () => {
+      if (scrollRef.current) {
+        setMaxScrollWidth(
+          scrollRef.current.scrollWidth - scrollRef.current.clientWidth
+        );
+      }
+    };
+
+    // Check if scrollRef.current exists before adding event listeners
+    if (scrollRef.current) {
+      scrollRef.current.addEventListener("scroll", handleScroll);
+      updateMaxScrollWidth();
+    }
+
+    window.addEventListener("resize", updateMaxScrollWidth);
+
+    // Cleanup the event listeners on component unmount
+    return () => {
+      if (scrollRef.current) {
+        scrollRef.current.removeEventListener("scroll", handleScroll);
+      }
+      window.removeEventListener("resize", updateMaxScrollWidth);
+    };
+  }, []);
+
+  const handleScrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft -= 300;
+    }
+  };
+
+  const handleScrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft += 300;
+    }
+  };
+
   return (
     <section className="max-w-7xl mx-auto flex items-center flex-col gap-8 pb-10">
       <div className="flex-center flex-col gap-3">
@@ -21,7 +71,10 @@ const BoardMembers = () => {
         </p>
       </div>
 
-      <div className="flex justify-between w-full gap-8 overflow-x-scroll px-2 scrollbar-thin scrollbar-thumb-red-900 scrollbar-track-gray-200">
+      <div
+        ref={scrollRef}
+        className="flex justify-between w-full gap-8 overflow-x-scroll px-2"
+      >
         {Array.from({ length: 6 }).map((_, i) => (
           <div
             key={i}
@@ -30,6 +83,33 @@ const BoardMembers = () => {
             <BoardMember />
           </div>
         ))}
+      </div>
+
+      {/* Navigation Arrows */}
+      <div className="hidden sm:flex flex-row gap-4">
+        {/* Left Arrow */}
+        <div
+          className={`p-2 rounded-md text-3xl cursor-pointer transition-all ease-in duration-500 ${
+            scrollPosition === 0
+              ? "bg-gradient-to-r from-red-700/40 to-green-700/40"
+              : "bg-gradient-to-r from-red-700 to-green-700 text-white"
+          }`}
+          onClick={handleScrollLeft}
+        >
+          <MdKeyboardArrowLeft />
+        </div>
+
+        {/* Right Arrow */}
+        <div
+          className={`p-2 rounded-md text-3xl cursor-pointer transition-all ease-in duration-500 ${
+            scrollPosition >= maxScrollWidth
+              ? "bg-gradient-to-r from-red-700/40 to-green-700/40"
+              : "bg-gradient-to-r from-red-700 to-green-700 text-white"
+          }`}
+          onClick={handleScrollRight}
+        >
+          <MdKeyboardArrowRight />
+        </div>
       </div>
     </section>
   );
