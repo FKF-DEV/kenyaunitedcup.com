@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { calendar, clock } from "../../../assets";
 import { Header } from "../../../components";
 
-function Articles() {
+const Articles = () => {
   const [articles, setArticles] = useState([]);
   const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -12,15 +12,15 @@ function Articles() {
     const fetchArticles = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/api/news/`);
-        const firstTwoArticles = response.data.results
-          .slice(0, 2)
+        const firstFourArticles = response.data.results
+          .slice(0, 4)
           .map((article) => ({
             ...article,
             image: article.image.startsWith("http")
               ? article.image
               : `${BASE_URL}${article.image}`,
           }));
-        setArticles(firstTwoArticles);
+        setArticles(firstFourArticles);
       } catch (error) {
         console.error("Error fetching articles:", error);
       }
@@ -40,66 +40,61 @@ function Articles() {
             up
           </span>
         </h3>
-
         <p className="mt-4 text-base font-normal text-center max-w-lg">
           From grassroot initiatives to strategic decisions, we have had a
           profound ripple effect on the nation’s football footprint
         </p>
       </div>
 
-      <div className="flex items-center w-full flex-row overflow-x-scroll gap-4 p-4 md:gap-8">
-        {articles.map((article, index) => (
-          <Link
-            to={`/news/${article.title_slug}`}
-            key={article.id}
-            onClick={() => window.scrollTo(0, 0)}
-            className={`relative h-72 md:h-[512px] aspect-video p-8 rounded-2xl md:rounded-3xl shadow-lg flex items-end bg-cover bg-center transition-all duration-300 hover:cursor-pointer ${
-              index === 1 ? "w-[34%]" : "w-full"
-            }`}
-            style={{ backgroundImage: `url(${article.image})` }}
-          >
-            <div className="absolute inset-0 rounded-2xl md:rounded-3xl hover:bg-gradient-to-b hover:from-white/30 hover:via-[#09371D]/50 hover:to-[#09371D] transition-all duration-300 z-10">
-              <div
-                className={`absolute inset-0 text-white rounded-2xl md:rounded-3xl flex flex-col gap-2 md:gap-5 justify-end px-3 py-4 md:p-8 transition-all duration-300 ${
-                  index === 1 ? "overflow-hidden" : "overflow-visible"
-                } z-20`}
-              >
-                <h4 className="text-lg sm:text-xl md:text-2xl font-semibold max-w-lg">
-                  {article.title}
-                </h4>
-
-                <p className="text-sm md:text-base font-normal max-w-lg transition-all duration-300 line-clamp-2">
-                  {article.description}
-                </p>
-
-                <div className="flex items-center gap-4 md:gap-8 mt-2 md:mt-0">
-                  <div className="flex items-center gap-1.5">
-                    <img src={clock} alt="clock" className="size-5" />
-                    <span className="text-base">
-                      {new Date(article.created_at).toLocaleTimeString([], {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-1.5">
-                    <img src={calendar} alt="calendar" className="size-5" />
-                    <span className="text-base">
-                      {new Date(article.created_at).toLocaleDateString([], {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </span>
+      <div className="flex w-full overflow-x-auto gap-4 p-4">
+        <div className="flex flex-nowrap gap-4">
+          {articles.map((article, index) => (
+            <Link
+              to={`/news/${article.title_slug}`}
+              key={article.id}
+              onClick={() => window.scrollTo(0, 0)}
+              className="relative h-72 md:h-[512px] aspect-video p-8 rounded-2xl md:rounded-3xl shadow-lg flex items-end bg-cover bg-center transition-all duration-300 hover:cursor-pointer w-1/4"
+              style={{ backgroundImage: `url(${article.image})` }}
+            >
+              <div className="absolute inset-0 rounded-2xl md:rounded-3xl hover:bg-gradient-to-b hover:from-white/30 hover:via-[#09371D]/50 hover:to-[#09371D] transition-all duration-300 z-10">
+                <div
+                  className={`absolute inset-0 text-white rounded-2xl md:rounded-3xl flex flex-col gap-2 md:gap-5 justify-end px-3 py-4 md:p-8 transition-all duration-300 ${
+                    index === 1 ? "overflow-hidden" : "overflow-visible"
+                  } z-20`}
+                >
+                  <h4 className="text-lg sm:text-xl md:text-2xl font-semibold max-w-lg">
+                    {article.title}
+                  </h4>
+                  <p className="text-sm md:text-base font-normal max-w-lg transition-all duration-300 line-clamp-2">
+                    {article.description}
+                  </p>
+                  <div className="flex items-center gap-4 md:gap-8 mt-2 md:mt-0">
+                    <div className="flex items-center gap-1.5">
+                      <img src={clock} alt="clock" className="size-5" />
+                      <span className="text-base">
+                        {new Date(article.created_at).toLocaleTimeString([], {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <img src={calendar} alt="calendar" className="size-5" />
+                      <span className="text-base">
+                        {new Date(article.created_at).toLocaleDateString([], {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
-
       <div className="flex flex-col items-center md:-mt-10">
         <div className="flex flex-row items-center gap-4 text-xl font-bold">
           01
@@ -132,6 +127,6 @@ function Articles() {
       </div>
     </div>
   );
-}
+};
 
 export default Articles;
