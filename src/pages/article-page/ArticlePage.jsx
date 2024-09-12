@@ -12,8 +12,9 @@ const ArticlePage = () => {
   const { title_slug } = useParams();
   const [article, setArticle] = useState({});
   const [relatedArticles, setRelatedArticles] = useState([]);
-  const [liked, setLiked] = useState(false); // State to track if the article is liked
-  const [likes, setLikes] = useState(0); // State to track the number of likes
+  const [liked, setLiked] = useState(false);
+  const [likes, setLikes] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // Track current index for scrolling
   const BASE_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const ArticlePage = () => {
         const response = await axios.get(`${BASE_URL}/api/news/${title_slug}/`);
         const articleData = response.data;
         setArticle(articleData);
-        setLikes(articleData.likes); // Set the initial likes count
+        setLikes(articleData.likes);
 
         const categoryId = articleData.category?.id;
 
@@ -53,14 +54,30 @@ const ArticlePage = () => {
           `${BASE_URL}/api/news/${article.id}/like/`
         );
         if (response.status === 200) {
-          setLiked(true); // Set liked state to true
-          setLikes((prevLikes) => prevLikes + 1); // Increment likes
+          setLiked(true);
+          setLikes((prevLikes) => prevLikes + 1);
         }
       } catch (error) {
         console.error("Error liking the article:", error);
       }
     }
   };
+
+  // Handle scrolling between related articles
+  const handleNext = () => {
+    if (currentIndex < relatedArticles.length - 2) {
+      setCurrentIndex((prevIndex) => prevIndex + 2);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prevIndex) => prevIndex - 2);
+    }
+  };
+
+  const isPrevDisabled = currentIndex === 0;
+  const isNextDisabled = currentIndex >= relatedArticles.length - 2;
 
   return (
     <div className="bg-gray-100 flex flex-col items-center justify-center py-10">
@@ -142,30 +159,46 @@ const ArticlePage = () => {
             </span>
           </h3>
           <div className="flex flex-row items-center gap-4">
-            <div className="p-2 rounded-md cursor-pointer transition-all ease-in duration-500 bg-gradient-to-r from-red-700/40 to-green-700/40">
+            <div
+              onClick={handlePrev}
+              className={`p-2 rounded-md cursor-pointer transition-all ease-in duration-500 ${
+                isPrevDisabled
+                  ? "bg-gradient-to-r from-red-700/40 to-green-700/40 cursor-not-allowed"
+                  : "bg-gradient-to-r from-red-700 to-green-700 text-white"
+              }`}
+            >
               <MdKeyboardArrowLeft />
             </div>
             <div className="grid grid-cols-2 gap-4 py-16">
-              {relatedArticles.slice(0, 2).map((relatedArticle) => (
-                <Link
-                  to={`/news/${relatedArticle.title_slug}`}
-                  key={relatedArticle.id}
-                  onClick={() => window.scrollTo(0, 0)}
-                  style={{ backgroundImage: `url(${relatedArticle.image}) ` }}
-                  className="rounded-sm md:rounded-lg bg-cover bg-right-top overflow-hidden hover:scale-105 transition-all duration-300 ease-in"
-                >
-                  <div className="flex flex-col items-start justify-end gap-2 p-4 shadow-inner min-h-[300px] hover:cursor-pointer transition-all duration-300 ease-in hover:bg-gradient-to-b hover:from-white/30 hover:via-[#09371D]/50 hover:to-[#09371D] z-10 w-full  md:h-[200px] bg-cover bg-right-top overflow-hidden">
-                    <h4 className="text-lg font-semibold self-start text-white">
-                      {relatedArticle.title}
-                    </h4>
-                    <p className="text-sm font-normal line-clamp-2 text-white">
-                      {relatedArticle.description}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+              {relatedArticles
+                .slice(currentIndex, currentIndex + 2)
+                .map((relatedArticle) => (
+                  <Link
+                    to={`/news/${relatedArticle.title_slug}`}
+                    key={relatedArticle.id}
+                    onClick={() => window.scrollTo(0, 0)}
+                    style={{ backgroundImage: `url(${relatedArticle.image}) ` }}
+                    className="rounded-sm md:rounded-lg bg-cover bg-right-top overflow-hidden hover:scale-105 transition-all duration-300 ease-in"
+                  >
+                    <div className="flex flex-col items-start justify-end gap-2 p-4 shadow-inner min-h-[300px] hover:cursor-pointer transition-all duration-300 ease-in hover:bg-gradient-to-b hover:from-white/30 hover:via-[#09371D]/50 hover:to-[#09371D] z-10 w-full  md:h-[200px] bg-cover bg-right-top overflow-hidden">
+                      <h4 className="text-lg font-semibold self-start text-white">
+                        {relatedArticle.title}
+                      </h4>
+                      <p className="text-sm font-normal line-clamp-2 text-white">
+                        {relatedArticle.description}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
             </div>
-            <div className="p-2 rounded-md cursor-pointer transition-all ease-in duration-500 bg-gradient-to-r from-red-700 to-green-700 text-white">
+            <div
+              onClick={handleNext}
+              className={`p-2 rounded-md cursor-pointer transition-all ease-in duration-500 ${
+                isNextDisabled
+                  ? "bg-gradient-to-r from-red-700/40 to-green-700/40 cursor-not-allowed"
+                  : "bg-gradient-to-r from-red-700 to-green-700 text-white"
+              }`}
+            >
               <MdKeyboardArrowRight />
             </div>
           </div>

@@ -91,7 +91,7 @@ const BoardMembers = () => {
         <div
           className={`p-2 rounded-md text-3xl cursor-pointer transition-all ease-in duration-500 ${
             scrollPosition === 0
-              ? "bg-gradient-to-r from-red-700/40 to-green-700/40"
+              ? "bg-gradient-to-r from-red-700/40 to-green-700/40 cursor-not-allowed"
               : "bg-gradient-to-r from-red-700 to-green-700 text-white"
           }`}
           onClick={handleScrollLeft}
@@ -103,7 +103,7 @@ const BoardMembers = () => {
         <div
           className={`p-2 rounded-md text-3xl cursor-pointer transition-all ease-in duration-500 ${
             scrollPosition >= maxScrollWidth
-              ? "bg-gradient-to-r from-red-700/40 to-green-700/40"
+              ? "bg-gradient-to-r from-red-700/40 to-green-700/40 cursor-not-allowed"
               : "bg-gradient-to-r from-red-700 to-green-700 text-white"
           }`}
           onClick={handleScrollRight}
