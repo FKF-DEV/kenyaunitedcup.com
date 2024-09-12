@@ -43,9 +43,9 @@ const ArticlePage = () => {
   }, [BASE_URL, title_slug]);
 
   return (
-    <div className="bg-gray-100 flex flex-col items-center justify-center">
+    <div className="bg-gray-100 flex flex-col items-center justify-center py-10">
       <div className="flex flex-col items-center justify-center px-40 py-10 gap-10">
-        <h3 className="text-xl md:text-3xl font-semibold text-transparent bg-gradient-to-b from-[#004324] to-[#116937]/70 bg-clip-text">
+        <h3 className="text-xl md:text-3xl font-bold text-transparent bg-gradient-to-b from-[#004324] to-[#116937]/70 bg-clip-text">
           {article.title}
         </h3>
         <p className="text-base md:text-xl font-medium px-8">
@@ -54,24 +54,49 @@ const ArticlePage = () => {
         <img
           src={article.image}
           alt={article.title}
-          className="w-full rounded-2xl md:rounded-[32px] md:h-[631px] object-cover object-right-top overflow-hidden"
+          className="w-full rounded-xl md:rounded-3xl md:h-[631px] object-cover object-right-top overflow-hidden"
         />
         <div className="flex flex-row items-center w-full justify-between">
           <div className="flex flex-row items-center gap-2">
             <p className="text-green-700 text-sm font-semibold">SHARE IT</p>
-            <div className="p-2 rounded-full bg-white">
+
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white"
+            >
               <FaFacebookF />
-            </div>
-            <div className="p-2 rounded-full bg-white">
+            </a>
+
+            <a
+              href={`https://www.instagram.com/?url=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white"
+            >
               <FaInstagram />
-            </div>
-            <div className="p-2 rounded-full bg-white">
+            </a>
+
+            <a
+              href={`https://twitter.com/intent/tweet?url=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white"
+            >
               <FaXTwitter />
-            </div>
-            <div className="p-2 rounded-full bg-white">
+            </a>
+
+            <a
+              href={`https://www.linkedin.com/shareArticle?url=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white"
+            >
               <FaLinkedinIn />
-            </div>
+            </a>
           </div>
+
           <div className="flex flex-row items-center gap-2 text-green-700 font-semibold">
             <FiThumbsUp />
             <p>{article.likes}</p>
@@ -128,3 +153,4 @@ const ArticlePage = () => {
 };
 
 export default ArticlePage;
+
