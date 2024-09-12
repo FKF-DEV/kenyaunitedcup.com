@@ -29,15 +29,6 @@ function FAQs() {
           shoot us an email and we’d be glad to get back to you as soon as
           possible.
         </p>
-
-        <Link
-          to="/contact-us"
-          className="px-6 py-3 border border-gray-50 bg-gradient-to-r from-gray-300 to-gray-100 rounded-full transition-all duration-300 ease-in hover:gap-2.5 hover:ring ring-[#0F6B38]"
-        >
-          <span className="text-transparent bg-gradient-to-b from-[#004324] via-[#116937] to-[#2AA74B] bg-clip-text text-base font-semibold">
-            Contact Us
-          </span>
-        </Link>
       </div>
     </div>
   );
