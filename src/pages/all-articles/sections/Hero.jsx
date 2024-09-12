@@ -93,7 +93,7 @@ const Hero = () => {
       </div>
 
       {/* Pagination dots */}
-      <div className="bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 py-10">
+      <div className="flex gap-2 pt-12">
         {featuredArticles.map((_, index) => (
           <div
             key={index}
