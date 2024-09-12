@@ -12,6 +12,8 @@ const ArticlePage = () => {
   const { title_slug } = useParams();
   const [article, setArticle] = useState({});
   const [relatedArticles, setRelatedArticles] = useState([]);
+  const [liked, setLiked] = useState(false); // State to track if the article is liked
+  const [likes, setLikes] = useState(0); // State to track the number of likes
   const BASE_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
@@ -20,6 +22,7 @@ const ArticlePage = () => {
         const response = await axios.get(`${BASE_URL}/api/news/${title_slug}/`);
         const articleData = response.data;
         setArticle(articleData);
+        setLikes(articleData.likes); // Set the initial likes count
 
         const categoryId = articleData.category?.id;
 
@@ -42,6 +45,23 @@ const ArticlePage = () => {
     fetchArticle();
   }, [BASE_URL, title_slug]);
 
+  // Handle like button click
+  const handleLikeClick = async () => {
+    if (!liked) {
+      try {
+        const response = await axios.post(
+          `${BASE_URL}/api/news/${article.id}/like/`
+        );
+        if (response.status === 200) {
+          setLiked(true); // Set liked state to true
+          setLikes((prevLikes) => prevLikes + 1); // Increment likes
+        }
+      } catch (error) {
+        console.error("Error liking the article:", error);
+      }
+    }
+  };
+
   return (
     <div className="bg-gray-100 flex flex-col items-center justify-center py-10">
       <div className="flex flex-col items-center justify-center px-40 py-10 gap-10">
@@ -59,7 +79,7 @@ const ArticlePage = () => {
         <div className="flex flex-row items-center w-full justify-between">
           <div className="flex flex-row items-center gap-2">
             <p className="text-green-700 text-sm font-semibold">SHARE IT</p>
-
+            {/* Social Media Links */}
             <a
               href={`https://www.facebook.com/sharer/sharer.php?u=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
               target="_blank"
@@ -68,7 +88,6 @@ const ArticlePage = () => {
             >
               <FaFacebookF />
             </a>
-
             <a
               href={`https://www.instagram.com/?url=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
               target="_blank"
@@ -77,7 +96,6 @@ const ArticlePage = () => {
             >
               <FaInstagram />
             </a>
-
             <a
               href={`https://twitter.com/intent/tweet?url=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
               target="_blank"
@@ -86,7 +104,6 @@ const ArticlePage = () => {
             >
               <FaXTwitter />
             </a>
-
             <a
               href={`https://www.linkedin.com/shareArticle?url=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
               target="_blank"
@@ -97,9 +114,15 @@ const ArticlePage = () => {
             </a>
           </div>
 
-          <div className="flex flex-row items-center gap-2 text-green-700 font-semibold">
+          {/* Like Button */}
+          <div
+            className={`flex flex-row items-center gap-2 font-semibold cursor-pointer ${
+              liked ? "text-green-700" : "text-gray-700"
+            }`}
+            onClick={handleLikeClick}
+          >
             <FiThumbsUp />
-            <p>{article.likes}</p>
+            <p>{likes}</p>
           </div>
         </div>
       </div>
@@ -153,4 +176,3 @@ const ArticlePage = () => {
 };
 
 export default ArticlePage;
-
