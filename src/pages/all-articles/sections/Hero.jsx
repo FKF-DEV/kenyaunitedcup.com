@@ -56,7 +56,7 @@ const Hero = () => {
           }}
         className="bg-cover bg-right-top overflow-hidden"
         >
-          <div className="flex flex-col items-start justify-end gap-4 p-20 shadow-inner min-h-[300px] bg-gradient-to-b from-white/30 via-[#09371D]/50 to-[#09371D] z-10 w-full md:h-[600px] line-clamp-2">
+          <div className="flex flex-col items-start justify-end gap-4 p-20 shadow-inner min-h-[300px] bg-gradient-to-b from-white/30 via-[#09371D]/50 to-[#09371D] z-10 w-full md:h-[700px] line-clamp-2">
             <h3 className="text-white text-2xl font-semibold">
               {featuredArticles[currentIndex].title}
             </h3>
