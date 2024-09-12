@@ -17,7 +17,6 @@ const RelatedArticles = () => {
         const response = await axios.get(`${BASE_URL}/api/news/${title_slug}/`);
         const articleData = response.data;
         setArticle(articleData);
-        setLikes(articleData.likes);
 
         const categoryId = articleData.category?.id;
 
