@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Hero from "./sections/Hero";
 
 const AllArticles = () => {
   return (
-    <div>AllArticles</div>
-  )
-}
+    <div className="bg-gray-100">
+      <Hero />
+    </div>
+  );
+};
 
-export default AllArticles
+export default AllArticles;
