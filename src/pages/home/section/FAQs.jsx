@@ -3,11 +3,7 @@ import { FAQ, Header } from "../../../components";
 
 function FAQs() {
   return (
-    <div className="flex items-center flex-col md:flex-row w-full max-w-7xl mx-auto pb-8">
-      <div className="flex-1">
-        <FAQ />
-      </div>
-
+    <div className="flex items-center flex-col md:flex-row-reverse w-full max-w-7xl mx-auto px-4 pb-8">
       <div className="flex-1 flex items-center md:items-start flex-col gap-2 md:pl-32 lg:pl-44">
         <Header title="faq" />
         <h3 className="text-4xl font-semibold text-center md:text-left">
@@ -29,6 +25,9 @@ function FAQs() {
           shoot us an email and we’d be glad to get back to you as soon as
           possible.
         </p>
+      </div>
+      <div className="flex-1">
+        <FAQ />
       </div>
     </div>
   );
