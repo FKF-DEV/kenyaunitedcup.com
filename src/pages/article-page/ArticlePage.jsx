@@ -16,7 +16,6 @@ const ArticlePage = () => {
         const response = await axios.get(`${BASE_URL}/api/news/${title_slug}/`);
         const articleData = response.data;
         setArticle(articleData);
-        setLikes(articleData.likes);
       } catch (error) {
         console.error("Error fetching the article:", error);
       }
@@ -24,12 +23,18 @@ const ArticlePage = () => {
 
     fetchArticle();
   }, [BASE_URL, title_slug]);
+
   return (
     <div className="bg-gray-100 flex flex-col items-center justify-center py-10">
       <Hero />
       <Border />
       <div className="flex flex-col items-center justify-center px-40 py-5 gap-10 w-[75%]">
-        <p>{article.body}</p>
+        {article.body && (
+          <div
+            dangerouslySetInnerHTML={{ __html: article.body }}
+            className="first-letter:text-7xl first-letter:font-bold first-letter:text-black first-letter:mr-3 "
+          />
+        )}
       </div>
       <Border />
       <RelatedArticles />
