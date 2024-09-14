@@ -60,7 +60,7 @@ const Hero = () => {
             <h3 className="text-white text-xl md:text-2xl font-semibold">
               {featuredArticles[currentIndex].title}
             </h3>
-            <p className="text-white text-sm md:text-base">
+            <p className="text-white text-sm md:text-base line-clamp-3 md:line-clamp-2">
               {featuredArticles[currentIndex].description}
             </p>
             <div className="flex items-center gap-4 md:gap-8 mt-2 md:mt-0">
