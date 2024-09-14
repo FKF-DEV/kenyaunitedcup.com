@@ -25,14 +25,14 @@ const ArticlePage = () => {
   }, [BASE_URL, title_slug]);
 
   return (
-    <div className="bg-gray-100 flex flex-col items-center justify-center py-10">
+    <div className="bg-gray-100 flex flex-col items-center justify-center py-5 md:py-10">
       <Hero />
       <Border />
-      <div className="flex flex-col items-center justify-center px-40 py-5 gap-10 w-[75%]">
+      <div className="flex flex-col items-center justify-center px-6 md:px-40 py-5 gap-10 md:w-[75%]">
         {article.body && (
           <div
             dangerouslySetInnerHTML={{ __html: article.body }}
-            className="first-letter:text-7xl first-letter:font-bold first-letter:text-black first-letter:mr-3 "
+            className="md:first-letter:text-7xl first-letter:text-5xl first-letter:font-bold first-letter:text-black first-letter:mr-3 text-sm sm:text-base "
           />
         )}
       </div>

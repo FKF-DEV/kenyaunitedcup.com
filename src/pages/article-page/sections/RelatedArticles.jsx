@@ -55,10 +55,10 @@ const RelatedArticles = () => {
   const isPrevDisabled = currentIndex === 0;
   const isNextDisabled = currentIndex >= relatedArticles.length - 2;
   return (
-    <div className="flex flex-col items-center justify-center px-20 py-10 gap-10">
+    <div className="flex flex-col items-center justify-center px-5 md:px-20 py-10 gap-5 md:gap-10">
       <div className="flex-center flex-col gap-2">
         <Header title="Related Articles" />
-        <h3 className="text-4xl font-semibold text-center md:text-left">
+        <h3 className="text-3xl md:text-4xl font-semibold text-center md:text-left">
           You might like
           <span className="text-transparent bg-gradient-to-b from-[#004324] via-[#116937] to-[#2AA74B] bg-clip-text">
             {" "}
@@ -76,7 +76,7 @@ const RelatedArticles = () => {
           >
             <MdKeyboardArrowLeft />
           </div>
-          <div className="grid grid-cols-2 gap-4 py-16">
+          <div className=" flex flex-col md:grid md:grid-cols-2 gap-4 py-16">
             {relatedArticles
               .slice(currentIndex, currentIndex + 2)
               .map((relatedArticle) => (

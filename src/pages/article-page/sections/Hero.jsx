@@ -45,11 +45,11 @@ const Hero = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-40 py-10 gap-10">
-      <h3 className="text-xl md:text-3xl font-bold text-transparent bg-gradient-to-b from-[#004324] to-[#116937]/70 bg-clip-text">
+    <div className="flex flex-col items-center justify-center px-5 md:px-40 py-10 gap-10">
+      <h3 className="text-2xl md:text-3xl font-bold text-transparent bg-gradient-to-b from-[#004324] to-[#116937]/70 bg-clip-text">
         {article.title}
       </h3>
-      <p className="text-base md:text-xl font-medium px-8">
+      <p className="text-base md:text-xl font-medium px-2 md:px-8">
         {article.description}
       </p>
       <img
@@ -65,7 +65,7 @@ const Hero = () => {
             href={`https://www.facebook.com/sharer/sharer.php?u=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full bg-white"
+            className="p-1 md:p-2 rounded-full bg-white"
           >
             <FaFacebookF />
           </a>
@@ -73,7 +73,7 @@ const Hero = () => {
             href={`https://www.instagram.com/?url=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full bg-white"
+            className="p-1 md:p-2 rounded-full bg-white"
           >
             <FaInstagram />
           </a>
@@ -81,7 +81,7 @@ const Hero = () => {
             href={`https://twitter.com/intent/tweet?url=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full bg-white"
+            className="p-1 md:p-2 rounded-full bg-white"
           >
             <FaXTwitter />
           </a>
@@ -89,7 +89,7 @@ const Hero = () => {
             href={`https://www.linkedin.com/shareArticle?url=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full bg-white"
+            className="p-1 md:p-2 rounded-full bg-white"
           >
             <FaLinkedinIn />
           </a>

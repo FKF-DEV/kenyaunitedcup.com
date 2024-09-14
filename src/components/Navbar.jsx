@@ -11,7 +11,7 @@ function Navbar() {
   const { pathname } = useLocation();
 
   return (
-    <header className="h-20 relative">
+    <header className="h-20 relative z-50">
       <div className="mx-auto w-full h-full max-w-7xl flex-between">
         {/* logo */}
         <Link to="/">
