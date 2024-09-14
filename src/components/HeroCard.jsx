@@ -3,13 +3,13 @@ import Header from "./Header";
 
 const HeroCard = ({ article }) => {
   return (
-    <div className="border bg-white p-1.5 w-[1280px] rounded-3xl md:rounded-[40px]">
+    <div className="border bg-white p-1.5 w-[375px] sm:w-[768px] md:w-[1280px] rounded-3xl md:rounded-[40px]">
       <div className="flex items-center flex-col md:flex-row gap-6 md:gap-12 rounded-2xl md:rounded-[32px] md:h-[584px] overflow-hidden bg-gray-100">
-        <div className="w-full md:w-1/2 h-1/2 md:h-full">
+        <div className="w-full h-auto md:w-1/2 md:h-full">
           <img
             src={article.image}
             alt={article.title}
-            className="size-full object-cover"
+            className="h-80 md:size-full object-cover"
           />
         </div>
 

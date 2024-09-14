@@ -7,7 +7,6 @@ function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
   const BASE_URL = import.meta.env.VITE_API_URL;
   const sliderRef = useRef(null);
-  const transitionDuration = 3000;
 
   useEffect(() => {
     axios
@@ -36,7 +35,7 @@ function Hero() {
   }, [featuredArticles.length]);
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto overflow-hidden h-96 md:h-[680px] py-8">
+    <div className="relative w-full max-w-7xl mx-auto h-auto md:h-[680px] py-8 flex items-center justify-center">
       <div
         ref={sliderRef}
         className="flex"
@@ -46,13 +45,15 @@ function Hero() {
         }}
       >
         {featuredArticles.map((article, i) => (
-          <div key={i} className="w-full flex-shrink-0">
+          <div
+            key={i}
+            className="w-full flex-shrink-0 flex justify-center items-center" // Centering the HeroCard
+          >
             <HeroCard article={article} />
           </div>
         ))}
       </div>
-
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-50">
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-2 z-50">
         {featuredArticles.map((_, i) => (
           <button
             key={i}
@@ -70,4 +71,3 @@ function Hero() {
 }
 
 export default Hero;
-
