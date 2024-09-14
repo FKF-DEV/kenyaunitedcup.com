@@ -25,7 +25,7 @@ function ElectionsFiles() {
   }, [BASE_URL]);
 
   return (
-    <div className="max-w-7xl h-[664px] mx-auto flex-between flex-col md:flex-row">
+    <div className="max-w-7xl h-[664px] mx-5 md:mx-auto flex-between flex-col md:flex-row">
       <div className="flex-1 h-full flex-center md:flex-start flex-col gap-2.5 pr-12">
         <Header title="Election Files" />
         <h3 className="text-4xl font-semibold text-center md:text-left">

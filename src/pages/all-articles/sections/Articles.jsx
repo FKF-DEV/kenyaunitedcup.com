@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const Articles = ({ articles }) => {
   return (
-    <div className="container m-20 max-w-[1440px]">
+    <div className="container m-2 md:m-20 max-w-[1440px]">
       {articles.length > 0 && (
-        <div className="grid gap-20">
+        <div className="flex flex-col md:grid gap-20">
           {/* First Div: First 3 Articles */}
-          <div className="grid grid-cols-4 gap-10">
+          <div className="flex flex-col md:grid grid-cols-4 gap-10">
             {/* Article 1: Large on the left */}
             <Link
               to={`/news/${articles[0].title_slug}`}
@@ -17,11 +17,11 @@ const Articles = ({ articles }) => {
               <img
                 src={articles[0].image}
                 alt={articles[0].title}
-                className="w-full h-auto object-cover rounded-lg"
+                className="max-w-[375px] md:max-w-full h-auto md:h-full object-cover rounded-lg"
               />
               <div className="flex flex-col justify-between mt-16 gap-4 w-[75%]">
                 <h2 className="text-2xl font-bold">{articles[0].title}</h2>
-                <p className="text-base line-clamp-2">
+                <p className="text-base line-clamp-3 md:line-clamp-2">
                   {articles[0].description}
                 </p>
                 <div className="flex items-center gap-4 mt-4">
@@ -55,14 +55,14 @@ const Articles = ({ articles }) => {
                   to={`/news/${article.title_slug}`}
                   onClick={() => window.scrollTo(0, 0)}
                   key={article.id}
-                  className="flex flex-row gap-4 hover:scale-105 transition-all duration-300 ease-in"
+                  className="flex flex-col md:flex-row gap-4 hover:scale-105 transition-all duration-300 ease-in"
                 >
                   <img
                     src={article.image}
                     alt={article.title}
-                    className="w-full h-[370px] object-cover rounded-lg"
+                    className="max-w-[375px] md:w-full h-full md:h-[370px] object-cover rounded-lg"
                   />
-                  <div className="flex flex-col gap-4 min-w-[300px]">
+                  <div className="flex flex-col gap-4 w-[75%] md:min-w-[300px]">
                     <h3 className="text-xl font-bold">{article.title}</h3>
                     <p className="text-base line-clamp-3">
                       {article.description}
@@ -101,18 +101,18 @@ const Articles = ({ articles }) => {
           </div>
 
           {/* Second Div: Articles 4 and 5 */}
-          <div className="flex flex-row gap-24">
+          <div className="flex flex-col md:flex-row gap-24">
             {articles.slice(3, 5).map((article) => (
               <Link
                 to={`/news/${article.title_slug}`}
                 onClick={() => window.scrollTo(0, 0)}
                 key={article.id}
-                className="flex flex-row gap-4 hover:scale-105 transition-all duration-300 ease-in"
+                className="flex flex-col md:flex-row gap-4 hover:scale-105 transition-all duration-300 ease-in"
               >
                 <img
                   src={article.image}
                   alt={article.title}
-                  className="w-[50%] h-[370px] object-cover rounded-lg"
+                  className="max-w-[375px] md:w-[50%] h-full md:h-[370px] object-cover rounded-lg"
                 />
                 <div className="flex flex-col gap-4 max-w-[300px]">
                   <h3 className="text-xl font-bold">{article.title}</h3>

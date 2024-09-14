@@ -56,17 +56,17 @@ const Hero = () => {
           }}
         className="bg-cover bg-right-top overflow-hidden"
         >
-          <div className="flex flex-col items-start justify-end gap-4 p-20 shadow-inner min-h-[300px] bg-gradient-to-b from-white/30 via-[#09371D]/50 to-[#09371D] z-10 w-full md:h-[700px] line-clamp-2">
-            <h3 className="text-white text-2xl font-semibold">
+          <div className="flex flex-col items-start justify-end gap-4 p-10 md:p-20 shadow-inner min-h-[300px] bg-gradient-to-b from-white/30 via-[#09371D]/50 to-[#09371D] z-10 w-full md:h-[700px] line-clamp-2">
+            <h3 className="text-white text-xl md:text-2xl font-semibold">
               {featuredArticles[currentIndex].title}
             </h3>
-            <p className="text-white">
+            <p className="text-white text-sm md:text-base">
               {featuredArticles[currentIndex].description}
             </p>
             <div className="flex items-center gap-4 md:gap-8 mt-2 md:mt-0">
               <div className="flex items-center gap-1.5">
                 <img src={clock} alt="clock" className="size-5" />
-                <span className="text-base text-white">
+                <span className="text-sm md:text-base text-white">
                   {new Date(
                     featuredArticles[currentIndex].created_at
                   ).toLocaleTimeString([], {
