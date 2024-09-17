@@ -20,8 +20,8 @@ export const navLinks = [
     },
     {
       id: 3,
-      title: "Events",
-      link: "/events",
+      title: "News",
+      link: "/news",
     },
   ];
   

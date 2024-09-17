@@ -1,5 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import { About, Home, Events, Layout, ArticlePage, AllArticles } from "../pages";
+import {
+  About,
+  Home,
+  Layout,
+  ArticlePage,
+  AllArticles,
+} from "../pages";
 
 const router = createBrowserRouter([
   {
@@ -15,17 +21,13 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/events",
-        element: <Events />,
+        path: "/news",
+        element: <AllArticles />,
       },
       {
         path: "/news/:title_slug",
         element: <ArticlePage />,
       },
-      {
-        path: "/news/all-articles",
-        element: <AllArticles />,
-      }
     ],
   },
 ]);

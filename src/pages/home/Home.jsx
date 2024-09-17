@@ -3,7 +3,7 @@ import { Border } from "../../components";
 
 function Home() {
   return (
-    <main className="bg-gray-100">
+    <main className="bg-gray-100 overflow-hidden">
       <Hero />
       <Border />
       <ElectionsFiles />
