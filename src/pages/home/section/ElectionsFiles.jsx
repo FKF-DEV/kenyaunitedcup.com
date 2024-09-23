@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { cloudDownload } from "../../../assets";
@@ -12,10 +10,9 @@ function ElectionsFiles() {
   useEffect(() => {
     const fetchResources = async () => {
       try {
-        const response = await axios.get(
-          `${BASE_URL}/api/resources/resourcetypes/{resourcetypes_id}/resources/`
-        );
-        setResources(response.data);
+        const response = await axios.get(`${BASE_URL}/api/resources/`);
+        // Update to access the `results` field from the response data
+        setResources(response.data.results || []);
       } catch (error) {
         console.error("Error fetching resources:", error);
       }
