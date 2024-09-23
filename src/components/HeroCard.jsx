@@ -14,7 +14,7 @@ const HeroCard = ({ article }) => {
         </div>
 
         <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col gap-4 items-center md:items-start justify-center p-3 md:pr-4">
-          <Header title="Breaking News" color="primary" />
+          <Header title="Featured News" color="primary" />
 
           <h3 className="text-2xl md:text-4xl font-semibold text-center md:text-left text-transparent bg-gradient-to-b from-[#004324] to-[#116937] bg-clip-text">
             {article.title}
