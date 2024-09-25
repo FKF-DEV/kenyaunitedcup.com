@@ -30,7 +30,7 @@ function Hero() {
       setActiveIndex((prevIndex) =>
         prevIndex === featuredArticles.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [featuredArticles.length]);
 
