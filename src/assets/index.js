@@ -1,4 +1,4 @@
-export { default as aboutHero } from "./hero-image2.jpg";
+export { default as aboutHero } from "./electoral-board-members.jpg";
 export { default as aboutUs } from "./about-us.png";
 export { default as arrowRight } from "./arrow-right.svg";
 export { default as ball } from "./ball.svg";
