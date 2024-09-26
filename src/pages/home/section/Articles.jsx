@@ -56,7 +56,7 @@ const Articles = () => {
               className="relative h-72 md:h-[512px] aspect-video p-8 rounded-2xl md:rounded-3xl shadow-lg flex items-end bg-cover bg-center transition-all duration-300 hover:cursor-pointer w-1/4"
               style={{ backgroundImage: `url(${article.image})` }}
             >
-              <div className="absolute inset-0 rounded-2xl md:rounded-3xl hover:bg-gradient-to-b hover:from-white/30 hover:via-[#09371D]/50 hover:to-[#09371D] transition-all duration-300 z-10">
+              <div className="absolute inset-0 rounded-2xl md:rounded-3xl bg-gradient-to-b from-white/25 via-[#09371D]/40 to-[#09371D]/90 hover:bg-gradient-to-b hover:from-white/30 hover:via-[#09371D]/50 hover:to-[#072414] transition-all duration-300 z-10">
                 <div
                   className={`absolute inset-0 text-white rounded-2xl md:rounded-3xl flex flex-col gap-2 md:gap-5 justify-end px-3 py-4 md:p-8 transition-all duration-300 ${
                     index === 1 ? "overflow-hidden" : "overflow-visible"

@@ -1,9 +1,9 @@
-import { AddOutlined, RemoveOutlined } from "@mui/icons-material";
-
 // eslint-disable-next-line no-unused-vars
 // import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { AddOutlined, RemoveOutlined } from "@mui/icons-material";
+import { HashLink } from "react-router-hash-link";
 
 const questions = [
   {
@@ -27,14 +27,9 @@ const questions = [
         The eligibility requirements for all candidates seeking an elective post
         in FKF are set out in the amended FKF Electoral Code which can be
         accessed{" "}
-        <a
-          href="https://example.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 underline"
-        >
+        <HashLink to="/#elections-files" className="text-primary underline">
           here
-        </a>
+        </HashLink>
         .
       </>
     ),

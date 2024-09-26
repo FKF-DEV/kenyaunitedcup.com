@@ -6,7 +6,7 @@ function Hero() {
     <div className="max-w-7xl mx-auto py-8 px-3">
       <div className="border bg-white p-1.5 w-full rounded-3xl md:rounded-[40px]">
         <div className="flex items-center flex-col md:flex-row gap-6 md:gap-12 rounded-2xl md:rounded-[32px] md:h-[584px] overflow-hidden bg-gray-100">
-          <div className="w-full md:w-1/2 h-1/2 md:h-full">
+          <div className="w-full md:w-4/5 h-1/2 md:h-full">
             <img
               src={aboutHero}
               alt="top-story"
