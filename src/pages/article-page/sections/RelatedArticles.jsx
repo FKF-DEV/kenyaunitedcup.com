@@ -87,7 +87,7 @@ const RelatedArticles = () => {
                   style={{ backgroundImage: `url(${relatedArticle.image}) ` }}
                   className="rounded-sm md:rounded-lg bg-cover bg-right-top overflow-hidden hover:scale-105 transition-all duration-300 ease-in"
                 >
-                  <div className="flex flex-col items-start justify-end gap-2 p-4 shadow-inner min-h-[300px] hover:cursor-pointer transition-all duration-300 ease-in hover:bg-gradient-to-b hover:from-white/30 hover:via-[#09371D]/50 hover:to-[#09371D] z-10 w-full  md:h-[200px] bg-cover bg-right-top overflow-hidden">
+                  <div className="flex flex-col items-start justify-end gap-2 p-4 shadow-inner min-h-[300px] hover:cursor-pointer transition-all duration-300 ease-in bg-gradient-to-b from-white/25 via-[#09371D]/40 to-[#09371D]/90 hover:bg-gradient-to-b hover:from-white/30 hover:via-[#09371D]/50 hover:to-[#072414] z-10 w-full  md:h-[200px] bg-cover bg-right-top overflow-hidden">
                     <h4 className="text-lg font-semibold self-start text-white">
                       {relatedArticle.title}
                     </h4>
