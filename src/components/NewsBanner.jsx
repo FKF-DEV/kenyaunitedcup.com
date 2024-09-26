@@ -38,32 +38,38 @@ const NewsBanner = () => {
       <img src={message} alt="message" className="size-6 object-contain" />
       <Marquee pauseOnHover>
         <div className="flex items-center flex-grow gap-4">
-          {recentResource ? (
-            // Repeat the most recent resource 4 times
-            Array(4)
-              .fill()
-              .map((_, index) => (
-                <div
-                  key={index}
-                  className="flex items-center space-x-1 text-sm font-normal"
-                >
-                  <p>
-                    {recentResource.title}, {recentResource.description}!
-                  </p>
-                  <Link
-                    to={recentResource.document}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-700 underline font-semibold"
-                  >
-                    View
-                  </Link>
-                  <div className="h-0.5 bg-white w-8" />
-                </div>
-              ))
-          ) : (
-            <p>No resources available</p>
-          )}
+          <div className="flex items-center space-x-1 text-sm font-normal">
+            <p className="">FKF Elections 2024 Timelines are now up.</p>
+            <Link to="/" className="text-green-700 underline font-semibold">
+              View
+            </Link>
+          </div>
+          {/* <div className="h-0.5 bg-white w-8" /> */}
+
+          {/* <div className="flex items-center space-x-1 text-sm font-normal">
+            <p className="">March 2023 Election results are now up.</p>
+            <Link to="/" className="text-green-700 underline font-semibold">
+              View
+            </Link>
+          </div> */}
+          <div className="h-0.5 bg-white w-8" />
+
+          <div className="flex items-center space-x-1 text-sm font-normal">
+            <p className="">FKF 2019/2020 [REVISED]Electoral Code is now up.</p>
+            <Link to="/" className="text-green-700 underline font-semibold">
+              View
+            </Link>
+          </div>
+          <div className="h-0.5 bg-white w-8" />
+
+          <div className="flex items-center space-x-1 text-sm font-normal">
+            <p className="">2024 Election Guidelines and Regulations are now up.</p>
+            <Link to="/" className="text-green-700 underline font-semibold">
+              View
+            </Link>
+          </div>
+          <div className="h-0.5 bg-white w-8" />
+
         </div>
       </Marquee>
     </div>
