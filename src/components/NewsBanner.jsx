@@ -14,7 +14,7 @@ const NewsBanner = () => {
               View
             </Link>
           </div>
-          <div className="h-0.5 bg-white w-8" />
+          {/* <div className="h-0.5 bg-white w-8" /> */}
 
           {/* <div className="flex items-center space-x-1 text-sm font-normal">
             <p className="">March 2023 Election results are now up.</p>
