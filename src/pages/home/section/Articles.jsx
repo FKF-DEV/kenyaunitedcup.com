@@ -102,7 +102,7 @@ const Articles = () => {
           05
         </div>
         <Link
-          to="/news/all-articles"
+          to="/news/"
           className="flex items-center gap-2 transition-all duration-300 ease-in hover:gap-2.5 hover:ring ring-[#0F6B38] px-3 py-2 rounded-full"
         >
           <span className="font-sm font-semibold text-[#0F6B38]">
