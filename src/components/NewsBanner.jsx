@@ -10,7 +10,7 @@ const NewsBanner = () => {
         <div className="flex items-center flex-grow gap-4">
           <div className="flex items-center space-x-1 text-sm font-normal">
             <p className="">FKF Elections 2024 Timelines are now up.</p>
-            <Link to="/" className="text-green-700 underline font-semibold">
+            <Link to="https://eb-api.footballkenya.org/media/documents/FKF_ELECTION_ROADMAP.PDF" className="text-green-700 underline font-semibold">
               View
             </Link>
           </div>
@@ -26,7 +26,7 @@ const NewsBanner = () => {
 
           <div className="flex items-center space-x-1 text-sm font-normal">
             <p className="">FKF 2019/2020 [REVISED]Electoral Code is now up.</p>
-            <Link to="/" className="text-green-700 underline font-semibold">
+            <Link to="https://eb-api.footballkenya.org/media/documents/FKF_ELECTORAL_CODE_2019_2020_REVISED.PDF" className="text-green-700 underline font-semibold">
               View
             </Link>
           </div>
@@ -34,7 +34,7 @@ const NewsBanner = () => {
 
           <div className="flex items-center space-x-1 text-sm font-normal">
             <p className="">2024 Election Guidelines and Regulations are now up.</p>
-            <Link to="/" className="text-green-700 underline font-semibold">
+            <Link to="https://eb-api.footballkenya.org/media/documents/FKF_ELECTION_GUIDELINES__REGULATIONS.PDF" className="text-green-700 underline font-semibold">
               View
             </Link>
           </div>
