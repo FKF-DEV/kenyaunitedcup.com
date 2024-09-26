@@ -9,23 +9,15 @@ const NewsBanner = () => {
       <Marquee pauseOnHover>
         <div className="flex items-center flex-grow gap-4">
           <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className="">FKF Elections 2024 Timelines are now up.</p>
-            <Link to="/" className="text-green-700 underline font-semibold">
-              View
-            </Link>
-          </div>
-          <div className="h-0.5 bg-white w-8" />
-
-          {/* <div className="flex items-center space-x-1 text-sm font-normal">
             <p className="">March 2023 Election results are now up.</p>
             <Link to="/" className="text-green-700 underline font-semibold">
               View
             </Link>
-          </div> */}
+          </div>
           <div className="h-0.5 bg-white w-8" />
 
           <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className="">FKF 2019/2020 [REVISED]Electoral Code is now up.</p>
+            <p className="">March 2023 Election results are now up.</p>
             <Link to="/" className="text-green-700 underline font-semibold">
               View
             </Link>
@@ -33,7 +25,15 @@ const NewsBanner = () => {
           <div className="h-0.5 bg-white w-8" />
 
           <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className="">2024 Election Guidelines and Regulations are now up.</p>
+            <p className="">March 2023 Election results are now up.</p>
+            <Link to="/" className="text-green-700 underline font-semibold">
+              View
+            </Link>
+          </div>
+          <div className="h-0.5 bg-white w-8" />
+
+          <div className="flex items-center space-x-1 text-sm font-normal">
+            <p className="">March 2023 Election results are now up.</p>
             <Link to="/" className="text-green-700 underline font-semibold">
               View
             </Link>
