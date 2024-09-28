@@ -22,7 +22,7 @@ function FAQs() {
           We promised transparency and openness and we tend to keep our word.
           Here’s some of the most asked questions, by you, answered, by us. If
           you feel like your question still hasn’t been answered, feel free to
-          shoot us an email and we’d be glad to get back to you as soon as
+          shoot us an email <a href="mailto:info@eb.footballkenya.org" className="text-primary underline">info@eb.footballkenya.org</a> and we’d be glad to get back to you as soon as
           possible.
         </p>
       </div>
