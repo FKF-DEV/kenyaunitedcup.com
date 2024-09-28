@@ -32,6 +32,7 @@ function Footer() {
         </nav>
 
         <p className="text-sm font-normal">
+        <a href="mailto:info@eb.footballkenya.org" className="text-primary underline">info@eb.footballkenya.org</a> {" "}
           © {year} FKF Electoral Board. All rights reserved.
         </p>
       </footer>
