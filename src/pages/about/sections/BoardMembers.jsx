@@ -1,12 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { Header } from "../../../components";
 
 const BoardMembers = () => {
   const [members, setMembers] = useState([]);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [maxScrollWidth, setMaxScrollWidth] = useState(0);
   const scrollRef = useRef(null);
   const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -30,26 +27,17 @@ const BoardMembers = () => {
       }
     };
 
-    const updateMaxScrollWidth = () => {
-      if (scrollRef.current) {
-        setMaxScrollWidth(
-          scrollRef.current.scrollWidth - scrollRef.current.clientWidth
-        );
-      }
-    };
-
     if (scrollRef.current) {
       scrollRef.current.addEventListener("scroll", handleScroll);
-      updateMaxScrollWidth();
     }
 
-    window.addEventListener("resize", updateMaxScrollWidth);
+    window.addEventListener("resize", handleScroll);
 
     return () => {
       if (scrollRef.current) {
         scrollRef.current.removeEventListener("scroll", handleScroll);
       }
-      window.removeEventListener("resize", updateMaxScrollWidth);
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
@@ -85,7 +73,7 @@ const BoardMembers = () => {
       {/* Scrollable Members Section */}
       <div
         ref={scrollRef}
-        className="flex justify-between w-full gap-8 overflow-x-scroll px-2"
+        className="flex justify-between w-full gap-8 overflow-x-scroll px-2 scrollbar-2 scroll-smooth"
       >
         {members.map((member) => (
           <div
@@ -95,30 +83,6 @@ const BoardMembers = () => {
             <BoardMember member={member} />
           </div>
         ))}
-      </div>
-
-      {/* Navigation Arrows */}
-      <div className="hidden sm:flex flex-row gap-4">
-        <div
-          className={`p-2 rounded-md text-3xl cursor-pointer transition-all ease-in duration-500 ${
-            scrollPosition === 0
-              ? "bg-gradient-to-r from-red-700/40 to-green-700/40 cursor-not-allowed"
-              : "bg-gradient-to-r from-red-700 to-green-700 text-white"
-          }`}
-          onClick={handleScrollLeft}
-        >
-          <MdKeyboardArrowLeft />
-        </div>
-        <div
-          className={`p-2 rounded-md text-3xl cursor-pointer transition-all ease-in duration-500 ${
-            scrollPosition >= maxScrollWidth
-              ? "bg-gradient-to-r from-red-700/40 to-green-700/40 cursor-not-allowed"
-              : "bg-gradient-to-r from-red-700 to-green-700 text-white"
-          }`}
-          onClick={handleScrollRight}
-        >
-          <MdKeyboardArrowRight />
-        </div>
       </div>
     </section>
   );
@@ -182,3 +146,4 @@ const BoardMember = ({ member }) => {
 };
 
 export default BoardMembers;
+
