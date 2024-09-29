@@ -47,6 +47,47 @@ const questions = [
     answer:
       "Appeals against any decision of the Electoral Board must be lodged with the FKF Appeals Committee within 3 days of receipt of the communication or decision being challenged.  An appeal fee of KES 100,000/- shall be paid by any appellant which shall be refunded in the event the appeal is successful.",
   },
+  {
+    id: 6,
+    question: "What are the official FKF Electoral Board contact emails?",
+    answer: (
+      <>
+        You can reach out to the FKF Electoral Board through the following
+        emails:
+        <ul>
+          <li>
+            <a href="mailto:info@eb.footballkenya.org" className="text-primary">
+              info@eb.footballkenya.org
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:appeals@eb.footballkenya.org"
+              className="text-primary"
+            >
+              appeals@eb.footballkenya.org
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:chairman@eb.footballkenya.org"
+              className="text-primary"
+            >
+              chairman@eb.footballkenya.org
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:communications@eb.footballkenya.org"
+              className="text-primary"
+            >
+              communications@eb.footballkenya.org
+            </a>
+          </li>
+        </ul>
+      </>
+    ),
+  },
 ];
 
 export default function FAQ() {
