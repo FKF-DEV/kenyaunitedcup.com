@@ -5,24 +5,24 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const NewsBanner = () => {
-  const [recentResource, setRecentResource] = useState(null);
-  const [loading, setLoading] = useState(true); // Added loading state
+  const [resources, setResources] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const BASE_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    // Fetch the resource data from the API
     const fetchResources = async () => {
       try {
-        const response = await axios.get("VITE_API_URL/api/resources/");
-        const resources = response.data.results;
-        if (resources && resources.length > 0) {
-          setRecentResource(resources[0]); // Use the most recent resource
+        const response = await axios.get(`${BASE_URL}/api/resources/`);
+        const fetchedResources = response.data.results;
+        if (fetchedResources && fetchedResources.length > 0) {
+          setResources(fetchedResources);
         } else {
           console.error("No resources available");
         }
       } catch (error) {
         console.error("Error fetching resources:", error);
       } finally {
-        setLoading(false); // Set loading to false once API call completes
+        setLoading(false);
       }
     };
 
@@ -37,56 +37,26 @@ const NewsBanner = () => {
     <div className="text-white bg-black py-2 px-4 flex flex-row items-center gap-2">
       <img src={message} alt="message" className="size-6 object-contain" />
       <Marquee pauseOnHover>
-        <div className="flex items-center flex-grow gap-4">
-          <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className=" "> FKF Elections 2024 Timelines are now up.</p>
-            <Link to="https://eb-api.footballkenya.org/media/documents/FKF_ELECTION_ROADMAP.PDF" className="text-green-700 underline font-semibold">
-              View
-            </Link>
-          </div>
-          <div className="h-0.5 bg-white w-8" />
+        <div className="flex items-center flex-grow gap-8">
+          {resources.map((resource) => (
+            <div
+              key={resource.id}
+              className="flex items-center space-x-1 text-sm font-normal"
+            >
+              <p>{resource.title}</p>
+              <Link
+                to={resource.document}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-700 underline font-semibold pl-2 pr-8"
+              >
+                View
+              </Link>
+              <div className="h-0.5 bg-white w-8"/>{" "}
+            </div>
+          ))}
+        </div>
 
-          <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className="">FKF 2019/2020 [REVISED]Electoral Code is now up.</p>
-            <Link to="https://eb-api.footballkenya.org/media/documents/FKF_ELECTORAL_CODE_2019_2020_REVISED.PDF" className="text-green-700 underline font-semibold">
-              View
-            </Link>
-          </div>
-          <div className="h-0.5 bg-white w-8" />
-
-          <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className="">2024 Election Guidelines and Regulations are now up.</p>
-            <Link to="https://eb-api.footballkenya.org/media/documents/FKF_ELECTION_GUIDELINES__REGULATIONS.PDF" className="text-green-700 underline font-semibold">
-              View
-            </Link>
-          </div>
-          <div className="h-0.5 bg-white w-8" />
-       
-          <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className="">FKFEB PRELIMINARY LIST OF ELIGIBLE CLUBS - (COUNTY LEVEL) are now up.</p>
-            <Link to="http://eb-api.footballkenya.org/media/documents/FKF_ELECTIONS_2024_PRELIMINARY_LIST_OF_ELIGIBLE_CLUBS.PDF" className="text-green-700 underline font-semibold">
-              View
-            </Link>
-          </div>
-          <div className="h-0.5 bg-white w-8" />
-
-          <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className="">FKFEB County Elections Nomination Forms are now up.</p>
-            <Link to="#elections-files" className="text-green-700 underline font-semibold">
-              View
-            </Link>
-          </div>
-          <div className="h-0.5 bg-white w-8" />
-
-          <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className="">FKFEB National Elections Nomination Forms are now up.</p>
-            <Link to="#elections-files" className="text-green-700 underline font-semibold">
-              View
-            </Link>
-          </div>
-          <div className="h-0.5 bg-white w-8" />
-
-</div>
       </Marquee>
     </div>
   );

@@ -32,7 +32,7 @@ const ArticlePage = () => {
         {article.body && (
           <div
             dangerouslySetInnerHTML={{ __html: article.body }}
-            className="md:first-letter:text-7xl first-letter:text-5xl first-letter:font-bold first-letter:text-black first-letter:mr-3 text-sm sm:text-base "
+            className="prose prose-a:text-primary md:first-letter:text-7xl first-letter:text-5xl first-letter:font-bold first-letter:text-black first-letter:mr-3 text-sm sm:text-base"
           />
         )}
       </div>
