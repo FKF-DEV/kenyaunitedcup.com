@@ -56,6 +56,7 @@ const NewsBanner = () => {
             </div>
           ))}
         </div>
+
       </Marquee>
     </div>
   );
