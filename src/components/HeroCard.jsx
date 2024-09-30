@@ -36,7 +36,7 @@ const HeroCard = ({ article }) => {
               height="20"
               viewBox="0 0 20 20"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="https://www.w3.org/2000/svg"
             >
               <path
                 d="M13.8889 6.88892L17 10M17 10L13.8889 13.1111M17 10L3 10"
