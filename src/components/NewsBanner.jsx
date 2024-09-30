@@ -39,7 +39,7 @@ const NewsBanner = () => {
       <Marquee pauseOnHover>
         <div className="flex items-center flex-grow gap-4">
           <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className=" "> FKF Elections 2024 Timelines are now up.</p>
+            <p className="">FKF Elections 2024 Timelines are now up.</p>
             <Link to="https://eb-api.footballkenya.org/media/documents/FKF_ELECTION_ROADMAP.PDF" className="text-green-700 underline font-semibold">
               View
             </Link>
@@ -61,32 +61,8 @@ const NewsBanner = () => {
             </Link>
           </div>
           <div className="h-0.5 bg-white w-8" />
-       
-          <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className="">FKFEB PRELIMINARY LIST OF ELIGIBLE CLUBS - (COUNTY LEVEL) are now up.</p>
-            <Link to="http://eb-api.footballkenya.org/media/documents/FKF_ELECTIONS_2024_PRELIMINARY_LIST_OF_ELIGIBLE_CLUBS.PDF" className="text-green-700 underline font-semibold">
-              View
-            </Link>
-          </div>
-          <div className="h-0.5 bg-white w-8" />
 
-          <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className="">FKFEB County Elections Nomination Forms are now up.</p>
-            <Link to="#elections-files" className="text-green-700 underline font-semibold">
-              View
-            </Link>
-          </div>
-          <div className="h-0.5 bg-white w-8" />
-
-          <div className="flex items-center space-x-1 text-sm font-normal">
-            <p className="">FKFEB National Elections Nomination Forms are now up.</p>
-            <Link to="#elections-files" className="text-green-700 underline font-semibold">
-              View
-            </Link>
-          </div>
-          <div className="h-0.5 bg-white w-8" />
-
-</div>
+        </div>
       </Marquee>
     </div>
   );
