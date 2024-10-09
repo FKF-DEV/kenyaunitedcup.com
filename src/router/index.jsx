@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         element: <AllArticles />,
       },
       {
-        path: "/resources",
+        path: "/files",
         element: <ResourcesPage />,
       },
       {

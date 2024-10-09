@@ -25,8 +25,8 @@ export const navLinks = [
     },
     {
       id: 4,
-      title: "Resources",
-      link: "/resources",
+      title: "Files",
+      link: "/files",
     },
   ];
   
