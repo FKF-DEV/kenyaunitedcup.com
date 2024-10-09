@@ -23,5 +23,10 @@ export const navLinks = [
       title: "News",
       link: "/news",
     },
+    {
+      id: 4,
+      title: "Files",
+      link: "/resources",
+    },
   ];
   
