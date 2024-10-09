@@ -5,6 +5,7 @@ import {
   Layout,
   ArticlePage,
   AllArticles,
+  ResourcesPage,
 } from "../pages";
 
 const router = createBrowserRouter([
