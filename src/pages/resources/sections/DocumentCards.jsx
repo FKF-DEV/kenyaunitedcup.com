@@ -37,7 +37,7 @@ const DocumentCards = () => {
           >
             <div className="absolute bottom-0 left-0 p-4  w-full flex flex-col gap-4">
               <p className="text-primary text-xl font-bold">{document.title}</p>
-              <p className="text-gray-500 text-sm font-medium">{document.description}</p>
+              <p className="text-gray-500 text-sm font-medium">{document.resource_category}</p>
             </div>
           </div>
 
