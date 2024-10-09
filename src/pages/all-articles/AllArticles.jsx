@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Border } from "../../components";
 import Hero from "./sections/Hero";
 import Articles from "./sections/Articles";
-import Pagination from "./sections/Pagination";
+import Pagination from "../../components/Pagination";
 import axios from "axios";
 
 const AllArticles = () => {
