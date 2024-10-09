@@ -25,6 +25,11 @@ const router = createBrowserRouter([
         element: <AllArticles />,
       },
       {
+        path: "/files",
+        element: <ResourcesPage />,
+      },
+      {
+
         path: "/news/:title_slug",
         element: <ArticlePage />,
       },
