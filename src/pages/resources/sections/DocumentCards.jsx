@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { documentCards, documentWatermark } from "../../../assets";
+import documentCards from "../../../../public/document-card.svg";
+import documentWatermark from "../../../../public/documentwatermark.svg";
 
 const DocumentCards = ({ filteredDocuments }) => {
   const [documents, setDocuments] = useState([]);
