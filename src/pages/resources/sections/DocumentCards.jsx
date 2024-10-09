@@ -46,7 +46,7 @@ const DocumentCards = () => {
               to={document.document}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 border border-primary rounded bg-white text-primary font-semibold text-center w-full"
+              className="p-2 border border-primary rounded-lg bg-white text-primary font-semibold text-center w-full"
             >
               View / Download
             </Link>
