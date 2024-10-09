@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { cloudDownload } from "../../../assets";
 import { Header } from "../../../components";
+import { Link } from "react-router-dom";
 
 function ElectionsFiles() {
   const [resources, setResources] = useState([]);
@@ -11,7 +12,6 @@ function ElectionsFiles() {
     const fetchResources = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/api/resources/`);
-        // Update to access the `results` field from the response data
         setResources(response.data.results || []);
       } catch (error) {
         console.error("Error fetching resources:", error);
@@ -46,6 +46,29 @@ function ElectionsFiles() {
           electoral process including regulations, the voter’s register,
           candidates or the final results.
         </p>
+        <Link
+          to="/files/"
+          className="flex items-center gap-2 transition-all duration-300 ease-in hover:gap-2.5 hover:ring ring-[#0F6B38] px-3 py-2 rounded-full"
+        >
+          <span className="font-sm font-semibold text-[#0F6B38]">
+            View More
+          </span>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.8889 6.88892L17 10M17 10L13.8889 13.1111M17 10L3 10"
+              stroke="#0F6B38"
+              strokeWidth="1.67"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
       </div>
 
       <div className="w-full md:w-1/2 flex-1 flex flex-col gap-4 overflow-y-scroll h-full px-2 md:px-0 py-2 scrollbar">
