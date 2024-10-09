@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useMediaQuery } from "react-responsive";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 const Categories = ({ setFilteredDocuments, documents }) => {
   const [categories, setCategories] = useState([]);
@@ -49,15 +49,15 @@ const Categories = ({ setFilteredDocuments, documents }) => {
     }
   };
 
-  const handleNext = () => {
+  const handleNextClick = () => {
     if (currentIndex < categories.length - (isMobile ? 2 : 3)) {
-      setCurrentIndex((prevIndex) => prevIndex + (isMobile ? 2 : 3));
+      setCurrentIndex((prevIndex) => prevIndex + 1);
     }
   };
 
-  const handlePrev = () => {
+  const handlePrevClick = () => {
     if (currentIndex > 0) {
-      setCurrentIndex((prevIndex) => prevIndex - (isMobile ? 2 : 3));
+      setCurrentIndex((prevIndex) => prevIndex - 1);
     }
   };
 
@@ -66,14 +66,22 @@ const Categories = ({ setFilteredDocuments, documents }) => {
     currentIndex + (isMobile ? 2 : 3)
   );
 
-  const isPrevDisabled = currentIndex === 0;
-  const isNextDisabled = currentIndex >= categories.length - (isMobile ? 2 : 3);
-
   return (
-    <div className="flex flex-row items-center justify-start md:justify-center gap-4 mb-4 w-full overflow-x-auto p-4">
+    <div className="flex flex-row items-center justify-start md:justify-center gap-2 mb-4 w-full overflow-x-auto p-4">
+      <button
+        onClick={handlePrevClick}
+        className={`p-2 rounded-md cursor-pointer transition-all ease-in duration-500 ${
+          currentIndex === 0
+            ? "bg-gradient-to-r from-red-700/40 to-green-700/40 cursor-not-allowed"
+            : "bg-gradient-to-r from-red-700 to-green-700 text-white"
+        }`}
+      >
+        <MdKeyboardArrowLeft />
+      </button>
+
       <button
         onClick={() => handleCategoryClick("All")}
-        className={`rounded-lg px-4 py-2 ${
+        className={`rounded-lg px-2 py-1 ${
           activeCategory === "All"
             ? "bg-gradient-to-r from-red-700 to-green-700 text-white"
             : "bg-white text-primary"
@@ -86,7 +94,7 @@ const Categories = ({ setFilteredDocuments, documents }) => {
         <button
           key={category.id}
           onClick={() => handleCategoryClick(category.resource_category)}
-          className={`rounded-lg px-4 py-2 ${
+          className={`rounded-lg px-2 py-1 ${
             activeCategory === category.resource_category
               ? "bg-gradient-to-r from-red-700 to-green-700 text-white"
               : "bg-white text-primary"
@@ -96,22 +104,16 @@ const Categories = ({ setFilteredDocuments, documents }) => {
         </button>
       ))}
 
-      {isPrevDisabled ? null : (
-        <button
-          className="p-2 rounded-md bg-gradient-to-r from-red-700 to-green-700 text-white"
-          onClick={handlePrev}
-        >
-          <MdKeyboardArrowRight />
-        </button>
-      )}
-      {isNextDisabled ? null : (
-        <button
-          className="p-2 rounded-md bg-gradient-to-r from-red-700 to-green-700 text-white"
-          onClick={handleNext}
-        >
-          <MdKeyboardArrowRight />
-        </button>
-      )}
+      <button
+        onClick={handleNextClick}
+        className={`p-2 rounded-md cursor-pointer transition-all ease-in duration-500 ${
+          currentIndex >= categories.length - (isMobile ? 2 : 3)
+            ? "bg-gradient-to-r from-red-700/40 to-green-700/40 cursor-not-allowed"
+            : "bg-gradient-to-r from-red-700 to-green-700 text-white"
+        }`}
+      >
+        <MdKeyboardArrowRight />
+      </button>
     </div>
   );
 };
