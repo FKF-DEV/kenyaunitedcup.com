@@ -5,7 +5,6 @@ import {
   Layout,
   ArticlePage,
   AllArticles,
-  ResourcesPage,
 } from "../pages";
 
 const router = createBrowserRouter([
@@ -30,6 +29,7 @@ const router = createBrowserRouter([
         element: <ResourcesPage />,
       },
       {
+
         path: "/news/:title_slug",
         element: <ArticlePage />,
       },
