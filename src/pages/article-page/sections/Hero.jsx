@@ -62,7 +62,7 @@ const Hero = () => {
           <p className="text-green-700 text-sm font-semibold">SHARE IT</p>
           {/* Social Media Links */}
           <a
-            href={`https://www.facebook.com/sharer/sharer.php?u=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=https://election.footballkenya.org/news/${title_slug}`}
             target="_blank"
             rel="noopener noreferrer"
             className="p-1 md:p-2 rounded-full bg-white"
@@ -70,7 +70,7 @@ const Hero = () => {
             <FaFacebookF />
           </a>
           <a
-            href={`https://www.instagram.com/?url=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
+            href={`https://www.instagram.com/?url=https://election.footballkenya.org/news/${title_slug}`}
             target="_blank"
             rel="noopener noreferrer"
             className="p-1 md:p-2 rounded-full bg-white"
@@ -78,7 +78,7 @@ const Hero = () => {
             <FaInstagram />
           </a>
           <a
-            href={`https://twitter.com/intent/tweet?url=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
+            href={`https://twitter.com/intent/tweet?url=https://election.footballkenya.org/news/${title_slug}`}
             target="_blank"
             rel="noopener noreferrer"
             className="p-1 md:p-2 rounded-full bg-white"
@@ -86,7 +86,7 @@ const Hero = () => {
             <FaXTwitter />
           </a>
           <a
-            href={`https://www.linkedin.com/shareArticle?url=https://fkf-electoral-board.netlify.app/news/${title_slug}`}
+            href={`https://www.linkedin.com/shareArticle?url=https://election.footballkenya.org/news/${title_slug}`}
             target="_blank"
             rel="noopener noreferrer"
             className="p-1 md:p-2 rounded-full bg-white"
