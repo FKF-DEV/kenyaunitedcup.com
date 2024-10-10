@@ -24,11 +24,16 @@ const RelatedArticles = () => {
           const relatedResponse = await axios.get(
             `${BASE_URL}/api/news/category/${categoryId}/`
           );
-          const relatedArticlesWithImagePath =
-            relatedResponse.data.articles.map((relatedArticle) => ({
+          const relatedArticlesWithImagePath = relatedResponse.data.articles
+            .map((relatedArticle) => ({
               ...relatedArticle,
               image: `${BASE_URL}${relatedArticle.image}`,
-            }));
+            }))
+            // Filter out the current article based on title_slug or id
+            .filter(
+              (relatedArticle) => relatedArticle.title_slug !== title_slug
+            );
+
           setRelatedArticles(relatedArticlesWithImagePath);
         }
       } catch (error) {
@@ -115,4 +120,3 @@ const RelatedArticles = () => {
 };
 
 export default RelatedArticles;
-

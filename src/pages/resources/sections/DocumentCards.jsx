@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { documentCards, documentWatermark } from "../../../assets";
+import documentCards from "../../../../public/document-card.svg";
+import documentWatermark from "../../../../public/documentwatermark.svg";
 
-const DocumentCards = () => {
+const DocumentCards = ({ filteredDocuments }) => {
   const [documents, setDocuments] = useState([]);
   const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -23,7 +24,7 @@ const DocumentCards = () => {
 
   return (
     <div className="m-8 md:m-24 grid grid-cols-1 gap-10 md:grid-cols-3 overflow-hidden">
-      {documents.map((document) => (
+      {filteredDocuments.map((document) => (
         <div key={document.id} className="relative">
           <div
             className="p-4 border border-gray-200 rounded-xl min-w-[300px] min-h-[400px] relative bg-cover bg-center"
