@@ -38,13 +38,15 @@ const DocumentCards = ({ filteredDocuments }) => {
           >
             <div className="absolute bottom-0 left-0 p-4  w-full flex flex-col gap-4">
               <p className="text-primary text-xl font-bold">{document.title}</p>
-              <p className="text-gray-500 text-sm font-medium">{document.resource_category}</p>
+              <p className="text-gray-500 text-sm font-medium">
+                {document.resource_category}
+              </p>
             </div>
           </div>
 
           <div className="flex justify-center mt-3 w-full">
             <Link
-              to={document.document}
+              to={document.document.replace(/^http:\/\//i, "https://")} // Replace HTTP with HTTPS
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 border border-primary rounded-lg bg-white text-primary font-semibold text-center w-full"
