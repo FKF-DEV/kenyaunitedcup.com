@@ -32,6 +32,12 @@ const RelatedArticles = () => {
             // Filter out the current article based on title_slug or id
             .filter(
               (relatedArticle) => relatedArticle.title_slug !== title_slug
+            )
+            // Sort articles by creation date (newest first)
+            .sort(
+              (a, b) =>
+                new Date(b.created_at).getTime() -
+                new Date(a.created_at).getTime()
             );
 
           setRelatedArticles(relatedArticlesWithImagePath);
@@ -59,6 +65,7 @@ const RelatedArticles = () => {
 
   const isPrevDisabled = currentIndex === 0;
   const isNextDisabled = currentIndex >= relatedArticles.length - 2;
+
   return (
     <div className="flex flex-col items-center justify-center px-5 md:px-20 py-10 gap-5 md:gap-10">
       <div className="flex-center flex-col gap-2">
@@ -81,7 +88,7 @@ const RelatedArticles = () => {
           >
             <MdKeyboardArrowLeft />
           </div>
-          <div className=" flex flex-col md:grid md:grid-cols-2 gap-4 py-16">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-4 py-16">
             {relatedArticles
               .slice(currentIndex, currentIndex + 2)
               .map((relatedArticle) => (
@@ -89,10 +96,10 @@ const RelatedArticles = () => {
                   to={`/news/${relatedArticle.title_slug}`}
                   key={relatedArticle.id}
                   onClick={() => window.scrollTo(0, 0)}
-                  style={{ backgroundImage: `url(${relatedArticle.image}) ` }}
+                  style={{ backgroundImage: `url(${relatedArticle.image})` }}
                   className="rounded-sm md:rounded-lg bg-cover bg-right-top overflow-hidden hover:scale-105 transition-all duration-300 ease-in"
                 >
-                  <div className="flex flex-col items-start justify-end gap-2 p-4 shadow-inner min-h-[300px] hover:cursor-pointer transition-all duration-300 ease-in bg-gradient-to-b from-white/25 via-[#09371D]/40 to-[#09371D]/90 hover:bg-gradient-to-b hover:from-white/30 hover:via-[#09371D]/50 hover:to-[#072414] z-10 w-full  md:h-[200px] bg-cover bg-right-top overflow-hidden">
+                  <div className="flex flex-col items-start justify-end gap-2 p-4 shadow-inner min-h-[300px] hover:cursor-pointer transition-all duration-300 ease-in bg-gradient-to-b from-white/25 via-[#09371D]/40 to-[#09371D]/90 hover:bg-gradient-to-b hover:from-white/30 hover:via-[#09371D]/50 hover:to-[#072414] z-10 w-full md:h-[200px] bg-cover bg-right-top overflow-hidden">
                     <h4 className="text-lg font-semibold self-start text-white">
                       {relatedArticle.title}
                     </h4>
