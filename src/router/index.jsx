@@ -6,8 +6,8 @@ import {
   ArticlePage,
   AllArticles,
   ResourcesPage,
-  Terms,
-  PrivacyPolicy,
+  TermsPage,
+  PrivacyPolicyPage,
 } from "../pages";
 
 const router = createBrowserRouter([
@@ -37,11 +37,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/terms",
-        element: <Terms />,
+        element: <TermsPage />,
       },
       {
         path: "/privacy-policy",
-        element: <PrivacyPolicy />,
+        element: <PrivacyPolicyPage />,
       },
     ],
   },
