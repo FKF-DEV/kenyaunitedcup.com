@@ -15,7 +15,13 @@ const NewsBanner = () => {
         const response = await axios.get(`${BASE_URL}/api/resources/`);
         const fetchedResources = response.data.results;
         if (fetchedResources && fetchedResources.length > 0) {
-          setResources(fetchedResources);
+          const sortedResources = fetchedResources
+            .sort(
+              (a, b) =>
+                new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+            )
+            .slice(0, 5);
+          setResources(sortedResources);
         } else {
           console.error("No resources available");
         }
@@ -52,11 +58,10 @@ const NewsBanner = () => {
               >
                 View
               </Link>
-              <div className="h-0.5 bg-white w-8"/>{" "}
+              <div className="h-0.5 bg-white w-8" />{" "}
             </div>
           ))}
         </div>
-
       </Marquee>
     </div>
   );
