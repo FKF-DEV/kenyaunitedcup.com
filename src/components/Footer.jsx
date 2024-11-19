@@ -34,10 +34,16 @@ function Footer() {
         <div className="flex flex-col items-center md:items-start gap-2">
           <a
             href="mailto:info@eb.footballkenya.org"
-            className="text-primary underline"
+            className="text-primary underline text-sm font-semibold"
           >
             info@eb.footballkenya.org
           </a>{" "}
+          <Link to="/terms" className="text-primary underline text-sm font-semibold">
+            Terms of Service
+          </Link>
+          <Link to="/privacy-policy" className="text-primary underline text-sm font-semibold">
+            Privacy Policy
+          </Link>
           <p className="text-sm font-normal">
             © {year} FKF Electoral Board. All rights reserved.
           </p>
