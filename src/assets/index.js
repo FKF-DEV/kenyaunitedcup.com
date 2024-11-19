@@ -17,3 +17,6 @@ export { default as electoralCompliance } from "./electoral-compliance.png";
 export { default as overseeElection } from "./oversee-election.png";
 export { default as verifyCandidate } from "./verify-candidate.png";
 export { default as resourcesHero } from "./resources-hero-image.svg";
+
+export { default as docBackground } from "./document-card.svg";
+export { default as docWatermark } from "./documentwatermark.svg";
