@@ -14,7 +14,7 @@ function Navbar() {
       <div className="mx-auto w-full h-full max-w-7xl flex-between">
         {/* site title + tagline */}
         <div className="flex flex-col leading-tight">
-          <Link to="/" className="text-2xl md:text-3xl font-extrabold text-black">
+          <Link to="/" className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-black via-red-900 to-black bg-clip-text text-transparent">
             Kenya United Cup
           </Link>
           <span className="text-[10px] md:text-xs text-gray-600 uppercase tracking-wide">

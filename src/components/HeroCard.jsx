@@ -4,7 +4,24 @@ import Header from "./Header";
 const HeroCard = ({ article }) => {
   return (
     <div className="border bg-white p-1.5 w-[375px] sm:w-[768px] md:w-[1280px] rounded-3xl md:rounded-[40px]">
-      <div className="flex items-center flex-col md:flex-row gap-6 md:gap-12 rounded-2xl md:rounded-[32px] md:h-[584px] overflow-hidden bg-gray-100">
+      <div className="relative flex items-center flex-col md:flex-row gap-6 md:gap-12 rounded-2xl md:rounded-[32px] md:h-[584px] overflow-hidden bg-gray-100">
+        {/* subtle football overlay */}
+        <svg
+          className="absolute -right-20 -bottom-20 md:right-8 md:bottom-8 w-[380px] h-[380px] opacity-10 pointer-events-none"
+          viewBox="0 0 200 200"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="100" cy="100" r="95" stroke="#ffffff" strokeWidth="2" />
+          {/* pentagon */}
+          <path d="M100 55 L128 72 L118 103 L82 103 L72 72 Z" fill="#ffffff" fillOpacity="0.06" stroke="#ffffff" strokeWidth="1.5" />
+          {/* seams */}
+          <path d="M100 55 L100 5" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1" />
+          <path d="M128 72 L170 50" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1" />
+          <path d="M118 103 L150 145" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1" />
+          <path d="M82 103 L50 145" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1" />
+          <path d="M72 72 L30 50" stroke="#ffffff" strokeOpacity="0.6" strokeWidth="1" />
+        </svg>
         <div className="w-full h-auto md:w-1/2 md:h-full">
           <img
             src={article.image}

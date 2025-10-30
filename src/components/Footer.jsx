@@ -8,13 +8,13 @@ function Footer() {
   const { pathname } = useLocation();
 
   return (
-    <section className="bg-transparent">
-      <footer className="max-w-7xl mx-auto py-2 flex items-center justify-between flex-col gap-1 md:flex-row">
+    <section className="bg-[linear-gradient(-90deg,black_0%,#7f1d1d_50%,#166534_100%)] py-4 text-white">
+      <footer className="max-w-7xl mx-auto flex items-center justify-between flex-col gap-3 md:flex-row px-4">
         <div className="flex flex-col items-center md:items-start leading-tight">
-          <Link to="/" className="text-xl md:text-2xl font-extrabold text-black">
+          <Link to="/" className="text-xl md:text-2xl font-extrabold bg-gradient-to-r from-black via-white to-red-700 bg-clip-text text-transparent hover:opacity-90 transition-opacity">
             Kenya United Cup
           </Link>
-          <span className="text-[10px] md:text-xs text-gray-600 uppercase tracking-wide">
+          <span className="text-[10px] md:text-xs text-white/90 uppercase tracking-wide mt-1">
             ONE DREAM. ONE GAME. ONE NATION
           </span>
         </div>
@@ -27,29 +27,30 @@ function Footer() {
                 <Link
                   key={id}
                   to={link}
-                  className={`${
-                    link === pathname
-                      ? "text-primary font-bold"
-                      : "text-black font-medium"
-                  } `}
+                  className={`text-red-300 hover:text-white font-medium transition-colors ${
+                    link === pathname ? "text-white font-bold" : ""
+                  }`}
                 >
                   {title}
                 </Link>
               ))}
           </nav>
-          <p className="text-sm font-normal text-center w-full mt-1">
-            © {year} Kenya United Cup. All rights reserved.
-          </p>
+          <div className="text-center text-sm text-white/90 mt-2 md:mt-0">
+            &copy; {year} Kenya United Cup. All rights reserved.
+          </div>
         </div>
 
         <div className="flex flex-col items-center md:items-start gap-2">
           <a
             href="mailto:niaje@kenyaunited.com"
-            className="text-primary underline text-sm font-semibold"
+            className="text-red-300 hover:text-white underline text-sm font-semibold transition-colors"
           >
             niaje@kenyaunited.com
           </a>{" "}
-          <Link to="/privacy-policy" className="text-primary underline text-sm font-semibold">
+          <Link 
+            to="/privacy-policy" 
+            className="text-red-300 hover:text-white underline text-sm font-semibold transition-colors"
+          >
             Privacy Policy
           </Link>
         </div>

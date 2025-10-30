@@ -92,16 +92,16 @@ function Hero() {
   return (
     <section className="px-4 pt-6 pb-0">
       <div className="max-w-7xl mx-auto">
-        <div className="rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden"
+        <div className="rounded-3xl p-6 md:p-16 shadow-2xl relative overflow-hidden"
              style={{
                background:
                  "linear-gradient(135deg, rgba(0,0,0,0.9), rgba(220,38,38,0.85) 35%, rgba(22,163,74,0.85) 80%)",
              }}>
           <div className="absolute inset-0 pointer-events-none" />
 
-          <div className="flex flex-col items-center justify-center text-center py-10 md:py-16 gap-3">
+          <div className="relative z-10 flex flex-col items-center justify-center text-center py-10 md:py-16 gap-3">
+            <p className="text-white/70 text-[11px] md:text-xs uppercase tracking-[0.3em]">Coming Soon</p>
             <p className="text-white/90 text-xs md:text-sm uppercase tracking-wide font-extrabold">ONE DREAM. ONE GAME. ONE NATION</p>
-            <h2 className="text-white text-2xl md:text-3xl font-semibold tracking-wide">COMING SOON</h2>
 
             <div className="mt-6 md:mt-10 grid grid-cols-2 md:grid-cols-none md:grid-flow-col gap-4 md:gap-10 items-end">
               <div className="flex flex-col items-center">
@@ -125,13 +125,16 @@ function Hero() {
               </div>
             </div>
 
-            <Link to="/news" className="mt-8 md:mt-12 inline-block bg-gradient-to-r from-black to-red-700 text-white px-6 py-3 rounded-full shadow-lg w-full max-w-xs">
+            <button 
+              disabled
+              className="mt-8 md:mt-12 inline-block bg-gradient-to-r from-black to-red-700 text-white px-6 py-3 rounded-full shadow-lg w-full max-w-xs opacity-60 cursor-not-allowed"
+            >
               Join waitlist
-            </Link>
+            </button>
           </div>
 
-          <div className="text-white/30 text-[96px] md:text-[160px] font-extrabold tracking-tighter select-none leading-none mt-8 hidden md:block">
-            KENYA
+          <div className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-700 to-black text-[96px] md:text-[160px] font-extrabold tracking-tighter select-none leading-none mt-8 hidden md:block">
+            KENYA UNITED
           </div>
         </div>
       </div>

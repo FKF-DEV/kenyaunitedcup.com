@@ -13,8 +13,10 @@ function Layout() {
     <section className="w-screen">
       {showBanner && <NewsBanner />}
       <header className="py-4">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-          <h1 className="text-2xl md:text-3xl font-extrabold">Kenya United Cup</h1>
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between bg-white p-4 rounded-lg shadow">
+          <h1 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-black via-red-900 to-black bg-clip-text text-transparent">
+            Kenya United Cup
+          </h1>
           <button
             type="button"
             className="text-xs md:text-sm px-3 py-1 rounded-full bg-black/50 text-white"
