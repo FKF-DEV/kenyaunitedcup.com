@@ -8,25 +8,10 @@ export { default as NewsBanner } from "./NewsBanner";
 export { default as Footer } from "./Footer";
 
 export const navLinks = [
-    {
-      id: 1,
-      title: "Home",
-      link: "/",
-    },
-    {
-      id: 2,
-      title: "About",
-      link: "/about",
-    },
-    {
-      id: 3,
-      title: "News",
-      link: "/news",
-    },
-    {
-      id: 4,
-      title: "Files",
-      link: "/files",
-    },
-  ];
+  {
+    id: 1,
+    title: "Home",
+    link: "/",
+  },
+];
   

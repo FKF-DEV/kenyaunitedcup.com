@@ -8,85 +8,27 @@ import { HashLink } from "react-router-hash-link";
 const questions = [
   {
     id: 1,
-    question: "How are FKF Elections conducted?",
+    question: "Who can register for the Kenya United Cup?",
     answer:
-      "FKF elections are overseen by an independent Electoral Board whose members are ratified by FKF’s General Assembly. Elections are first conducted at the County level followed by the National level elections and finally Sub-County level elections. FKF elections are governed by the FKF Constitution, the FKF Electoral Code (amended) and guided by the electoral calendar published by the Electoral Board.",
+      "The tournament is open to teams from all 47 counties. Clubs, academies, universities, and community teams may register as long as they meet the eligibility rules for their category.",
   },
   {
     id: 2,
-    question: "Who is eligible to vote in FKF Elections?",
+    question: "How do we register and what is the deadline?",
     answer:
-      "Only active FKF Members are eligible to vote during FKF elections based on the level of election being contested. Voting at National level elections is open to the 94 delegates who comprise the FKF General Assembly as defined in the FKF Constitution. Delegates sent to represent an FKF Member during elections must belong to the Member they represent either by appointment or election.  \n The FKF Electoral Board is responsible for verifying eligibility of delegates who will be allowed to vote at County and Sub-County level elections and publishing of the voter register prior to the elections.",
+      "Team managers should complete the online registration form and upload required documents (player IDs, consent forms for minors). Registration closes four weeks before kickoff or once slots are filled.",
   },
   {
     id: 3,
-    question:
-      "Are there eligibility requirements for candidates seeking election?",
-    answer: (
-      <>
-        The eligibility requirements for all candidates seeking an elective post
-        in FKF are set out in the amended FKF Electoral Code which can be
-        accessed{" "}
-        <HashLink to="/#elections-files" className="text-primary underline">
-          here
-        </HashLink>
-        .
-      </>
-    ),
+    question: "Are there age categories or divisions?",
+    answer:
+      "Yes. The Cup features Senior (Open), U23, U18, and Women’s divisions. Teams may only compete in one division per tournament.",
   },
   {
     id: 4,
-    question:
-      "What documents are candidates expected to submit as part of their candidature?",
+    question: "What is the squad size and player eligibility?",
     answer:
-      "In addition to the nomination papers and declarations of support from the required number of delegates, candidates must submit a valid Kenyan ID or passport together with proof of active participation in football as per the requirements of the FKF Electoral Code. Candidates for the positions of President, Vice President must submit a Certificate of good conduct which shall not be older than 6 months together with clearance letters from the Directorate of Criminal Investigation, Ethics and Anti-Corruption Commission, Credit Reference Bureau and a valid Tax Compliance Certificate from KRA.",
-  },
-  {
-    id: 5,
-    question: "What is the timeline for appealing electoral results?",
-    answer:
-      "Appeals against any decision of the Electoral Board must be lodged with the FKF Appeals Committee within 3 days of receipt of the communication or decision being challenged.  An appeal fee of KES 100,000/- shall be paid by any appellant which shall be refunded in the event the appeal is successful.",
-  },
-  {
-    id: 6,
-    question: "What are the official FKF Electoral Board contact emails?",
-    answer: (
-      <>
-        You can reach out to the FKF Electoral Board through the following
-        emails:
-        <ul>
-          <li>
-            <a href="mailto:info@eb.footballkenya.org" className="text-primary">
-              info@eb.footballkenya.org
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:appeals@eb.footballkenya.org"
-              className="text-primary"
-            >
-              appeals@eb.footballkenya.org
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:chairman@eb.footballkenya.org"
-              className="text-primary"
-            >
-              chairman@eb.footballkenya.org
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:communications@eb.footballkenya.org"
-              className="text-primary"
-            >
-              communications@eb.footballkenya.org
-            </a>
-          </li>
-        </ul>
-      </>
-    ),
+      "Each squad may register up to 25 players and 5 officials. Players must be Kenyan citizens or legally resident, and may not be registered by more than one team in the tournament.",
   },
 ];
 

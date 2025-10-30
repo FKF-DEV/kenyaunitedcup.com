@@ -98,7 +98,7 @@ const Articles = () => {
       <div className="flex flex-col items-center md:-mt-10">
         <div className="flex flex-row items-center gap-4 text-xl font-bold">
           01
-          <hr className="w-40 h-1 mx-auto bg-gray-100 border-0 rounded md:my-10 bg-gradient-to-r from-green-700 to-red-700" />
+          <hr className="w-40 h-1 mx-auto bg-gray-100 border-0 rounded md:my-10 bg-gradient-to-r from-green-700 via-black to-red-700" />
           05
         </div>
         <Link

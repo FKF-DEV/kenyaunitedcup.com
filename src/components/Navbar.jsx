@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
-import { logo } from "../assets";
 import { navLinks } from ".";
 
 function Navbar() {
@@ -13,10 +12,15 @@ function Navbar() {
   return (
     <header className="h-20 relative z-50">
       <div className="mx-auto w-full h-full max-w-7xl flex-between">
-        {/* logo */}
-        <Link to="/">
-          <img src={logo} alt="logo" className="w-24 md:w-32 object-contain" />
-        </Link>
+        {/* site title + tagline */}
+        <div className="flex flex-col leading-tight">
+          <Link to="/" className="text-2xl md:text-3xl font-extrabold text-black">
+            Kenya United Cup
+          </Link>
+          <span className="text-[10px] md:text-xs text-gray-600 uppercase tracking-wide">
+            ONE DREAM. ONE GAME. ONE NATION
+          </span>
+        </div>
 
         <nav className="hidden md:flex-between gap-8 pr-8 text-base font-semibold">
           {navLinks.map(({ id, title, link }) => (
@@ -36,9 +40,9 @@ function Navbar() {
 
         <Link
           to={"/"}
-          className="bg-gradient-to-b from-[#22CF6C] to-[#116937] text-white px-6 py-3 text-base font-semibold rounded-full hidden md:flex"
+          className="bg-gradient-to-b from-red-700 via-black to-green-700 text-white px-6 py-3 text-base font-semibold rounded-full hidden md:flex"
         >
-          Election Results
+          All matches
         </Link>
 
         <div className="flex-center md:hidden mr-3 px-1">
@@ -76,9 +80,9 @@ function Navbar() {
 
           <Link
             to={"/"}
-            className="bg-gradient-to-b from-[#22CF6C] to-[#116937] text-white px-6 py-3 text-base font-semibold rounded-full md:hidden flex"
+          className="bg-gradient-to-b from-red-700 via-black to-green-700 text-white px-6 py-3 text-base font-semibold rounded-full md:hidden flex"
           >
-            Election Results
+            All matches
           </Link>
         </div>
       </div>

@@ -1,16 +1,15 @@
-import { Articles, ElectionsFiles, FAQs, Hero } from "./section";
-import { Border } from "../../components";
+import { Hero } from "./section";
 
 function Home() {
   return (
-    <main className="bg-gray-100 overflow-hidden">
+    <main
+      className="overflow-hidden min-h-screen"
+      style={{
+        background:
+          "linear-gradient(-45deg, #0a0a0a 0%, #111111 40%, #064e3b 75%, #7f1d1d 100%)",
+      }}
+    >
       <Hero />
-      <Border />
-      <ElectionsFiles />
-      <Border />
-      <Articles />
-      <Border />
-      <FAQs />
     </main>
   );
 }
