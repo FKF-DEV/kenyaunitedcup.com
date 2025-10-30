@@ -14,4 +14,10 @@ export const navLinks = [
     link: "/",
   },
 ];
+
+// Feature flags / vars
+export const flags = {
+  // If true, show the scrolling message bar (NewsBanner). Can be overridden by VITE_SHOW_MESSAGE_BAR env var
+  showMessageBar: false,
+};
   
