@@ -188,7 +188,7 @@ const NewsBanner = () => {
         <div className="flex items-center gap-8">
           {/* Countdown message */}
           <div className="flex items-center text-sm font-medium text-white/90 whitespace-nowrap">
-            Countdown to Kenya United Cup 2025 - November 7th, 2025 - The Ultimate Grassroot Football Showdown!
+            Countdown to Kenya United Cup 2025 - November 7th, 2025 - The Ultimate Grassroot Football Showdown! ONE DREAM. ONE GAME. ONE NATION
             <div className="h-4 w-px bg-white/30 mx-4"></div>
           </div>
           
