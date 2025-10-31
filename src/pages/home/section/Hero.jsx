@@ -102,7 +102,7 @@ function Hero() {
 
           <div className="relative z-10 grid md:grid-cols-2 gap-6 md:gap-10 items-center">
             <div
-              className="w-full h-80 md:h-[660px] rounded-2xl bg-center bg-cover shadow-lg"
+              className="w-full h-[360px] md:h-[660px] rounded-2xl bg-center bg-no-repeat bg-contain md:bg-cover shadow-lg"
               style={{ backgroundImage: `url(${heroImage})` }}
             />
 
