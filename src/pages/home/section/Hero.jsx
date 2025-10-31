@@ -133,8 +133,8 @@ function Hero() {
             </button>
           </div>
 
-          <div className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-700 to-black text-[96px] md:text-[160px] font-extrabold tracking-tighter select-none leading-none mt-8 hidden md:block">
-            KENYA UNITED
+          <div className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-700 to-black text-[96px] md:text-[120px] font-extrabold tracking-tighter select-none leading-none mt-8 hidden md:block">
+            KENYA UNITED CUP
           </div>
         </div>
       </div>

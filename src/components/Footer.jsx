@@ -42,10 +42,10 @@ function Footer() {
 
         <div className="flex flex-col items-center md:items-start gap-2">
           <a
-            href="mailto:hello@kenyaunited.com"
+            href="mailto:info@kenyaunitedcup.com"
             className="text-red-300 hover:text-white underline text-sm font-semibold transition-colors"
           >
-            hello@kenyaunited.com
+            info@kenyaunitedcup.com
           </a>{" "}
           <Link 
             to="/privacy-policy" 
