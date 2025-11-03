@@ -47,12 +47,6 @@ function Footer() {
           >
             info@kenyaunitedcup.com
           </a>{" "}
-          <Link 
-            to="/privacy-policy" 
-            className="text-red-300 hover:text-white underline text-sm font-semibold transition-colors"
-          >
-            Privacy Policy
-          </Link>
         </div>
       </footer>
     </section>
