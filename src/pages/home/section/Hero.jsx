@@ -132,12 +132,6 @@ function Hero() {
                 </div>
               </div>
 
-              <button 
-                disabled
-                className="mt-8 md:mt-12 inline-block bg-gradient-to-r from-black to-red-700 text-white px-6 py-3 rounded-full shadow-lg w-full max-w-xs opacity-60 cursor-not-allowed"
-              >
-                Join waitlist
-              </button>
             </div>
           </div>
         </div>
